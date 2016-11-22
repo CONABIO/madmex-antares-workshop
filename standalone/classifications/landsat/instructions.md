@@ -29,7 +29,7 @@ Using the command line of your system, run the next line:
 
 ```
 $sudo docker run --hostname database --name postgres-server-madmex \
--v $(pwd):/entry_for_database -p 32852:22 \
+-v /workshop:/entry_for_database -p 32852:22 \
 -p 32851:5432 -dt madmex/postgres-server
 ```
 
