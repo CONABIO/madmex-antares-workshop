@@ -58,8 +58,8 @@ $sudo docker exec -u=postgres -it postgres-server-madmex psql -h 172.17.0.2 -p 5
 Install extension postgis in `madmex_database`
 
 ```
-$sudo docker exec -u=postgres -it postgres-server-madmex psql -h 172.17.0.2 -p 5432 -c "CREATE EXTENSION postgis"
-$sudo docker exec -u=postgres -it postgres-server-madmex psql -h 172.17.0.2 -p 5432 -c "CREATE EXTENSION postgis_topology"
+$sudo docker exec -u=postgres -it postgres-server-madmex psql -h 172.17.0.2 -p 5432 -d madmex_database -c "CREATE EXTENSION postgis"
+$sudo docker exec -u=postgres -it postgres-server-madmex psql -h 172.17.0.2 -p 5432 -d madmex_database -c "CREATE EXTENSION postgis_topology"
 ```
 
 Clone madmex code into directory: `/workshop/code`
@@ -77,9 +77,10 @@ Create `configuration.ini` in the path: `/workshop/configuration/configuration.i
 ```
 [madmex]
 log_level = DEBUG
-antares_database = postgresql://madmex_user:madmex_user.@172.16.9.145:32851/madmex_database
+antares_database = postgresql://madmex_user:madmex_user.@172.17.0.8:5432/madmex_database
 date_format = %%Y-%%m-%%d
 rapideye_footprints_mexico_old = False
+test_folder = /workshop/eodata/
 ```
 
 
@@ -95,7 +96,7 @@ Enter to docker container `madmex_antares_container`
 $sudo docker exec -it madmex_antares_container /bin/bash
 ```
 
-Enter to directory '/workshop/code_madmex_antares'
+Enter to directory `/workshop/code_madmex_antares
 
 ```
 #cd /workshop/code_madmex_antares
@@ -107,17 +108,12 @@ Install madmex:
 #python setup.py install
 ```
 
+Enter to directory '/workshop/'
+
 Run the next script for creating the database:
 
 ```
 #python /workshop/code_madmex_antares/madmex/persistence/database/populate.py
-```
-
-
-Enter to directory /workshop:
-
-```
-#cd /workshop
 ```
 
 
@@ -160,7 +156,9 @@ Download the three images and copy to directory`/workshop/downloads_landsat`:
 
 
 
+#Ingest folders:
 
+python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00
 
 
 
