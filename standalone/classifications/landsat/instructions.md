@@ -108,7 +108,7 @@ Install madmex:
 #python setup.py install
 ```
 
-Enter to directory '/workshop/'
+Enter to directory `/workshop/'
 
 Run the next script for creating the database:
 
