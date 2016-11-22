@@ -68,7 +68,7 @@ Clone madmex code into directory: `/workshop/code`
 $sudo git clone https://github.com/CONABIO/madmex-antares.git code_madmex_antares
 ```
 
-Create directory `configuration`
+Create directory `/workshop/configuration`
 
 
 Create `configuration.ini` in the path: `/workshop/configuration/configuration.ini`
