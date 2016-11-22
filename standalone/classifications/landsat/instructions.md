@@ -77,7 +77,7 @@ Create `configuration.ini` in the path: `/workshop/configuration/configuration.i
 ```
 [madmex]
 log_level = DEBUG
-antares_database = postgresql://madmex_user:madmex_user.@172.17.0.8:5432/madmex_database
+antares_database = postgresql://madmex_user:madmex_user.@172.17.0.2:5432/madmex_database
 date_format = %%Y-%%m-%%d
 rapideye_footprints_mexico_old = False
 test_folder = /workshop/eodata/
