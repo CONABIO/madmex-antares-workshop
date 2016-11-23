@@ -97,7 +97,7 @@ Enter to docker container `madmex_antares_container`
 $sudo docker exec -it madmex_antares_container /bin/bash
 ```
 
-Enter to directory `/workshop/code_madmex_antares
+Enter to directory `/workshop/code_madmex_antares`
 
 ```
 #cd /workshop/code_madmex_antares
@@ -159,7 +159,27 @@ Download three images and copy to directory`/workshop/downloads_landsat`:
 
 #Preprocessing
 
-For converting to surface reflectances, create the file `/workshop/ledaps_shell.sh` and copy-paste the shell [ledaps_landsat8_shell.sh](ledaps_landsat8_shell.sh) on it.
+For converting to surface reflectances:
+
+* create the file `/workshop/ledaps_shell.sh` and copy-paste the shell [ledaps_landsat8_shell.sh](ledaps_landsat8_shell.sh) on it.
+
+* Create directory: `/workshop/auxiliary_data_landsat8/`, enter to `/workshop/auxiliary_data_landsat8` and curl the auxiliary data according to: https://github.com/USGS-EROS/espa-surface-reflectance/tree/master/not-validated-prototype-lasrc
+
+```
+#mkdir -p /workshop/auxiliary_data_landsat8
+#cd /workshop/auxiliary_data_landsat8
+#curl -O http://edclpdsftp.cr.usgs.gov/downloads/auxiliaries/l8sr_auxiliary/l8sr_auxiliary.tar.gz
+```
+
+* Decompress the auxiliary data:
+
+```
+#tar xvzf l8sr_auxiliary.tar.gz
+```
+
+* Run the following command:
+
+
 
 
 
