@@ -268,7 +268,7 @@ The shell `fmask_landsat8_shell.sh` creates the directory `raw_data`, so we can 
 
 ##Ingest raw folder:
 
-If we only want to registerFor registering raw data of landsat execute the following command:
+If we only want to register raw data of landsat execute the following command:
 
 Enter to docker container madmex/antares:
 
