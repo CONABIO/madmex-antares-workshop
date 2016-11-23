@@ -16,7 +16,7 @@ This approach uses images that have similar regional and temporal characteristic
 
 * We need to have an installation of docker in the system : https://www.docker.com/
 
-Pull the images from docker hub:
+Pull the next image from docker hub:
 
 ```
 $sudo docker pull madmex/antares
@@ -32,7 +32,7 @@ Change directory to directory `workshop`
 
 ```
 $cd /workshop
-
+```
 
 Create directory `/workshop/configuration`
 
