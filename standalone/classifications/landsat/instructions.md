@@ -197,7 +197,7 @@ For converting to surface reflectances and getting top of atmoshpere products:
 #bash ledaps_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/auxiliary_data_landsat8/ user1 password1 user2 password2 /workshop/downloads_landsat/
 ```
 
-If the command was successful, we will ingest the folder to database. First we enter to docker container madmex/antares:
+If the command was successful, we will ingest the folder to database. First we enter to docker container `madmex_antares_container
 
 ```
 $sudo docker exec -it madmex_antares_container /bin/bash
@@ -251,7 +251,7 @@ For clouds, we use Fmask algorithm
 #bash fmask_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/downloads_landsat/
 ```
 
-If the command was successful, we will ingest the folder to database. First we enter to docker container madmex/antares:
+If the command was successful, we will ingest the folder to database. First we enter to docker container `madmex_antares_container`:
 
 ```
 $sudo docker exec -it madmex_antares_container /bin/bash
@@ -284,7 +284,7 @@ After ingestion of raw data or products, we have registered both in database and
 
 If we only want to register raw data of landsat execute the following command:
 
-Enter to docker container madmex/antares:
+Enter to docker container `madmex_antares_container`:
 
 ```
 $sudo docker exec -it madmex_antares_container /bin/bash
