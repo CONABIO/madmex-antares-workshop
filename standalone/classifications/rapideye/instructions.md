@@ -52,6 +52,7 @@ And copy-paste the next lines:
 ```
 [madmex]
 log_level = DEBUG
+antares_database = postgresql://madmex_user:madmex_user.@172.17.0.8:5432/madmex_database
 date_format = %%Y-%%m-%%d
 rapideye_footprints_mexico_old = False
 folder_segmentation = /workshop/segmentation/segmentation:/segmentation/
