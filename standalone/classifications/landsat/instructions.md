@@ -9,6 +9,8 @@ $sudo docker pull madmex/postgres-server
 $sudo docker pull madmex/ledaps-landsat8
 $sudo docker pull madmex/python-fmask
 $sudo docker pull madmex/antares
+$sudo docker pull madmex/segmentation
+$sudo docker pull madmex/c5_execution
 ```
 
 Create a directory `workshop` with the next line:
@@ -85,7 +87,7 @@ test_folder = /workshop/eodata/
 folder_segmentation = /workshop/segmentation/segmentation:/segmentation/
 folder_segmentation_license = /workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
-big_folder = /workshop/classification/rapideye_simple_lcc/
+big_folder = /workshop/classification/landsat8/
 ```
 
 
@@ -327,63 +329,137 @@ After ingestion of raw data we have registered both in database and in folder /w
 
 Exit madmex antares
 
-Crete directory /workshop/training_data
+Crete directory /workshop/training_data:
+
+```
+$mkdir -p /workshop/training_data
+```
 
 Copy training data to /workshop/training_data
 
+```
+$cp training_data /workshop/training_data
+```
+
 Create directory /workshop/segmentation
 
+```
+$mkdir -p /workshop/segmentation
+```
 
-Clone https://github.com/CONABIO/docker-segmentation.git into /workshop/segmentation
+Change to directory `/workshop/segmentation`
 
+```
 cd /workshop/segmentation
+```
 
+Clone https://github.com/CONABIO/docker-segmentation.git
+
+```
 git clone https://github.com/CONABIO/docker-segmentation.git .
+```
 
 Enter /workshop/segmentation/segmentation
 
+```
+$cd /workshop/segmentation/segmentation
+```
+
 Create directory /workshop/segmentation/license
 
-Put license.txt in /workshop/segmentation/segmentation/license
+```
+$mkdir -p /workshop/segmentation/license
+```
 
-Construct image of segmentation: segmentation/segmentation:v1
+Create archive `license.txt` in `/workshop/segmentation/segmentation/license`, for this workshop we can use the license: `67156997172`
 
+```
+echo 67156997172 > /workshop/segmentation/license/license.txt
+```
 
+Enter madmex antares
 
-Enter madmex antares and register host and command in tables of database, we have to give the ip of the machine and the user root with it's password:
+```
+$sudo docker exec -it madmex_antares_container /bin/bash
+```
 
+Register host and command in tables of database giving the ip of the machine and the user root with it's password:
 
+```
 python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.16.9.145 madmex_run_container_nodo3 user_root root_password 22 workshop
+```
 
+For landsat classification:
 
+* Create directory for shapefile of landmask: /workshop/landmask/countries_caribe
 
-For rapideye classification
-create directory /workshop/eodata/rapideye_images
+```
+#mkdir -p /workshop/landmask/countries_caribe
+```
 
-copy images to this directory  /workshop/eodata/rapideye_images
+Copy archives of ESRI shapefile to: /workshop/landmask/countries_caribe
 
-create directory for shapefile of landmask: /workshop/landmask/countries_caribe
+```
+#cp countries_caribe.*  /workshop/landmask/countries_caribe
+```
 
-Copy shapefile to: /workshop/landmask/countries_caribe
+Create directories /workshop/classification/landsat8
 
+Change configuration.ini (if necessary) with lines:
 
+```
+training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
+big_folder = /workshop/classification/landsat8/
+```
 
-Create directories /workshop/classification/rapideye_simple_lcc
+Note: if you also have auxiliary files such as dem, aspect, slope, then, create directory `/workshop/dem_files`
 
-Change configuration.ini:
-big_folder = /workshop/classification/rapideye_simple_lcc/
+```
+$mkdir -p /workshop/dem_files
+```
 
-Install madmex again
+and copy dem, aspect, slope files to `/workshop/dem_files`
 
-python setup.py install
+```
+#cp dem.tif /workshop/dem_files
+#cp aspect.tif /workshop/dem_files
+#cp slope.tif /workshop/dem_files
+```
 
-Enter to directory /workshop/classification/rapideye_simple_lcc
+and modify `configuration.ini` with lines:
 
+```
+dem = /workshop/dem_files/dem.tif
+aspect_file = /workshop/dem_files/aspect.tif
+slope_file = /workshop/dem_files/slope.tif
+```
 
-Run classification rapideye command:
+If you changed configuration.ini, then you need to install madmex again:
 
-python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --landmask_path /workshop/landmask/countries_caribe/ --outlier True
+```
+#cd /workshop/code_madmex_antares
+#python setup.py install
+```
 
+Create directory `/workshop/classification/landsat8`
+
+```
+#mkdir -p /workshop/classification/landsat8
+```
+
+Enter to directory `/workshop/classification/landsat8`
+
+```
+#cd /workshop/classification/landsat8
+```
+
+Run classification landsat command for tile, and use `True`or `False` depending on your purposes.
+
+For example, our tile is `13045`, of year `2013`, a maximum of 10 cloud percentage, we don`t have auxiliary_files, we want an outlier elimination and we want that the algorithm fill holes because of clouds, then, the command will be:
+
+```
+python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --landmask_path /workshop/landmask/countries_caribe/ --outlier True --fill_holes True --auxiliary_files False
+```
 
 
 
