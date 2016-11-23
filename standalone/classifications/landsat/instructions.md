@@ -19,7 +19,7 @@ Create a directory `workshop` with the next line:
 $ sudo mkdir /workshop
 ```
 
-Enter to directory `workshop`
+Change directory to directory `workshop`
 
 ```
 $cd /workshop
@@ -71,11 +71,19 @@ Clone madmex code into directory: `/workshop/code`
 $sudo git clone https://github.com/CONABIO/madmex-antares.git code_madmex_antares
 ```
 
-Create directory `/workshop/configuration`
+Create directory `/workshop/configuration`:
 
+```
+$sudo mkdir -p /workshop/configuration
+```
 
-Create `configuration.ini` in the path: `/workshop/configuration/configuration.ini`
+Create `configuration.ini` in path: `/workshop/configuration/configuration.ini`, with an editor, for example using command `nano`:
 
+```
+$nano /workshop/configuration/configuration.ini
+```
+
+And copy-paste the next lines:
 
 ```
 [madmex]
@@ -90,6 +98,7 @@ training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
 big_folder = /workshop/classification/landsat8/
 ```
 
+We exit nano with `ctrl+x` and then type `y`in your keyboard to save changes.
 
 Execute the following command:
 
@@ -103,7 +112,7 @@ Enter to docker container `madmex_antares_container`
 $sudo docker exec -it madmex_antares_container /bin/bash
 ```
 
-Enter to directory `/workshop/code_madmex_antares`
+Change directory `/workshop/code_madmex_antares`
 
 ```
 #cd /workshop/code_madmex_antares
@@ -115,7 +124,7 @@ Install madmex:
 #python setup.py install
 ```
 
-Enter to directory `/workshop/`
+Change to directory `/workshop/`
 
 ```
 #cd /workshop
@@ -137,7 +146,7 @@ Create directory `downloads_landsat`:
 #mkdir downloads_landsat
 ```
 
-Enter to directory `downloads_landsat`
+Change to directory `downloads_landsat`
 
 Choose a path, row of landsat, for example: 13, 045 
 
@@ -167,7 +176,9 @@ Download three images and copy to directory`/workshop/downloads_landsat`:
 
 ##LEDAPS
 
-For converting to surface reflectances and getting top of atmoshpere products:
+For converting to surface reflectances and getting top of atmoshpere products for landsat8 we use: 
+
+https://github.com/USGS-EROS/espa-surface-reflectance/tree/master/not-validated-prototype-lasrc
 
 * Exit of madmex/antares:
 
@@ -177,7 +188,7 @@ For converting to surface reflectances and getting top of atmoshpere products:
 
 * create the file `/workshop/ledaps_landsat8_shell.sh` and copy-paste the shell [ledaps_landsat8_shell.sh](ledaps_landsat8_shell.sh) on it.
 
-* Create directory: `/workshop/auxiliary_data_landsat8/`, enter to `/workshop/auxiliary_data_landsat8` and curl the auxiliary data according to: https://github.com/USGS-EROS/espa-surface-reflectance/tree/master/not-validated-prototype-lasrc
+* Create directory: `/workshop/auxiliary_data_landsat8/`, change directory to `/workshop/auxiliary_data_landsat8` and curl the auxiliary data according to: https://github.com/USGS-EROS/espa-surface-reflectance/tree/master/not-validated-prototype-lasrc
 
 ```
 #mkdir -p /workshop/auxiliary_data_landsat8
@@ -234,7 +245,9 @@ After ingestion of raw data or products, we have registered both in database and
 
 ##FMASK
 
-For clouds, we use Fmask algorithm
+For clouds, we use Fmask algorithm: 
+
+www.sciencedirect.com/science/article/pii/S0034425714005069
 
 * Exit of madmex/antares:
 
