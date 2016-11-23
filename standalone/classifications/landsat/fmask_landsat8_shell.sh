@@ -27,3 +27,10 @@ mkdir fmaskfolder
 cp *_MTL.txt fmaskfolder
 
 mv *_MTLFmask* fmaskfolder
+
+mkdir raw_data
+
+mv L*_B[1-9].TIF raw_data
+mv L*_B1[0-1].TIF raw_data
+mv L*_BQA.TIF raw_data
+cp *_MTL.txt raw_data
