@@ -4,7 +4,7 @@
 
 * The ip of the machine in which we are going to perform the classification command is `172.16.9.145`, and we know the password of user root
 
-* There is an installation of docker in the system : https://www.docker.com/
+* We need to have an installation of docker in the system : https://www.docker.com/
 
 
 Pull the images from docker hub:
