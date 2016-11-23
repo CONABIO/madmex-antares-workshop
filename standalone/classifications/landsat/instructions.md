@@ -157,11 +157,19 @@ Download three images and copy to directory`/workshop/downloads_landsat`:
 #gstuil cp gs://earthengine-public/landsat/L8/013/045/LC80130452013177LGN01.tar.bz /workshop/downloads_landsat
 ```
 
-#Preprocessing
+#Preprocessing and ingestion
 
-For converting to surface reflectances:
+##LEDAPS
 
-* create the file `/workshop/ledaps_shell.sh` and copy-paste the shell [ledaps_landsat8_shell.sh](ledaps_landsat8_shell.sh) on it.
+For converting to surface reflectances and getting top of atmoshpere products:
+
+* Exit of madmex/antares:
+
+```
+#exit
+```
+
+* create the file `/workshop/ledaps_landsat8_shell.sh` and copy-paste the shell [ledaps_landsat8_shell.sh](ledaps_landsat8_shell.sh) on it.
 
 * Create directory: `/workshop/auxiliary_data_landsat8/`, enter to `/workshop/auxiliary_data_landsat8` and curl the auxiliary data according to: https://github.com/USGS-EROS/espa-surface-reflectance/tree/master/not-validated-prototype-lasrc
 
@@ -177,17 +185,74 @@ For converting to surface reflectances:
 #tar xvzf l8sr_auxiliary.tar.gz
 ```
 
-* Run the following command:
+* In directory where ledaps_landsat8_shell.sh is, run the following command as user root:
+
+```
+#bash ledaps_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/auxiliary_data_landsat8/ user1 password1 user2 password2 /workshop/downloads_landsat/
+```
+
+If the command was successful, we will ingest the folder to database. First we enter to docker container madmex/antares:
+
+```
+$sudo docker exec -it madmex_antares_container /bin/bash
+```
+
+Then, execute the following command for ingestion of products:
 
 
+```
+#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/srfolder
+```
+
+```
+#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/toafolder
+```
+
+After ingesting the surface reflectances, and top of atmosphere products, we can delete the folders:
+
+```
+#rm -r /workshop/downloads_landsat/LC80130452013145LGN00/toafolder
+```
+
+```
+#rm -r /workshop/downloads_landsat/LC80130452013145LGN00/toafolder
+```
+
+##FMASK
+
+For clouds, we use Fmask*
+
+* Exit of madmex/antares:
+
+```
+#exit
+```
+
+* create the file `/workshop/fmask_landsat8_shell.sh` and copy-paste the shell [fmask_landsat8_shell.sh](fmask_landsat8_shell.sh) on it.
+
+Execute the following command:
+
+* In directory where fmask_landsat8_shell.sh is, run the following command as user root:
+
+```
+#bash fmask_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/downloads_landsat/
+```
+
+If the command was successful, we will ingest the folder to database. First we enter to docker container madmex/antares:
+
+```
+$sudo docker exec -it madmex_antares_container /bin/bash
+```
+
+Then, execute the following command for ingestion of products:
 
 
+```
+#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/fmaskfolder
+```
 
 
-
-
-
-#Ingest folders:
+##Ingest raw folder:
 
 For registering raw data of landsat execute the following command:
 
