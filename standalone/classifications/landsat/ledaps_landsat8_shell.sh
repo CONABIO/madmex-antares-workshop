@@ -94,25 +94,6 @@ mv lndsr.$(echo $newdir)_MTL.txt lndsr.$(echo $newdir)_metadata.txt
 cp lndsr.$(echo $newdir).hdf lndcal.$(echo $newdir).hdf
 cp lndsr.$(echo $newdir)_hdf.xml lndcal.$(echo $newdir)_hdf.xml
 
-
-#FMASK:
-#sudo docker run --rm -v $7/$newdir:/data madmex/python-fmask gdal_merge.py -separate -of HFA -co COMPRESSED=YES -o ref.img $(ls $MADMEX_TEMP/$newdir|grep L[C-O]8.*_B[1-7,9].TIF)
-
-#sudo docker run --rm -v $7/$newdir:/data madmex/python-fmask gdal_merge.py -separate -of HFA -co COMPRESSED=YES -o thermal.img $(ls $MADMEX_TEMP/$newdir|grep L[C-O]8.*_B1[0,1].TIF)
-
-#sudo docker run --rm -v $7/$newdir:/data madmex/python-fmask fmask_usgsLandsatSaturationMask.py -i ref.img -m $(ls $MADMEX_TEMP/$newdir|grep .*_MTL.txt) -o saturationmask.img
-
-#sudo docker run --rm -v $7/$newdir:/data madmex/python-fmask fmask_usgsLandsatTOA.py -i ref.img -m $(ls $MADMEX_TEMP/$newdir|grep .*_MTL.txt) -o toa.img
-
-#sudo docker run --rm -v $7/$newdir:/data madmex/python-fmask fmask_usgsLandsatStacked.py -t thermal.img -a toa.img -m $(ls $MADMEX_TEMP/$newdir|grep .*_MTL.txt) -s saturationmask.img -o cloud.img
-
-#cd $MADMEX_TEMP/$newdir && gdal_translate -of ENVI cloud.img $(echo $newdir)_MTLFmask
-
-#INGEST:
-
-#Check if the processes generate at least the number of files expected in order to register the appropiate path in the DB,
-#if not echo a message of error
-
 mkdir raw_data
 
 mv L*_B[1-9].TIF raw_data
@@ -122,8 +103,6 @@ cp *_MTL.txt raw_data
 
 raw_data_number=$(ls raw_data|wc -l)
 
-#if [ $raw_data_number -ge 12 ]; then /usr/bin/python $MADMEX/interfaces/cli/madmex_processing.py Ingestion --input_directory $MADMEX_TEMP/$newdir/raw_data; else echo "error in tar: raw data";fi
-
 mkdir srfolder
 
 mv lndsr.*hdf* srfolder/
@@ -131,8 +110,6 @@ cp *_MTL.txt srfolder
 mv L*_sr_* srfolder/
 
 ledaps_sr_number=$(ls srfolder|wc -l)
-
-#if [ $ledaps_sr_number -ge 10 ]; then /usr/bin/python $MADMEX/interfaces/cli/madmex_processing.py Ingestion --input_directory $MADMEX_TEMP/$newdir/srfolder; else echo "error in surfaces reflectances process";fi
 
 mkdir toafolder
 
@@ -142,19 +119,3 @@ mv L*_toa_* toafolder/
 
 ledaps_toa_number=$(ls toafolder|wc -l)
 
-#if [ $ledaps_toa_number -eq 13 ]; then /usr/bin/python $MADMEX/interfaces/cli/madmex_processing.py Ingestion --input_directory $MADMEX_TEMP/$newdir/toafolder; else echo "error in toa process";fi
-
-#mkdir fmaskfolder
-
-#cp *_MTL.txt fmaskfolder
-
-#mv *_MTLFmask* fmaskfolder
-
-#fmask_number=$(ls fmaskfolder|wc -l)
-
-#if [ $ledaps_toa_number -ge 3 ]; then /usr/bin/python $MADMEX/interfaces/cli/madmex_processing.py Ingestion --input_directory $MADMEX_TEMP/$newdir/fmaskfolder; else echo "error in fmask process";fi
-
-
-#/usr/bin/python $MADMEX/interfaces/cli/madmex_processing.py Ingestion --input_directory $MADMEX_TEMP/$newdir
-
-#rm -r $MADMEX_TEMP/$newdir/
