@@ -360,7 +360,7 @@ $mkdir -p /workshop/training_data
 Copy training data to `/workshop/training_data`
 
 ```
-$cp training_data /workshop/training_data
+$cp training_data.tif /workshop/training_data
 ```
 
 Create directory `/workshop/segmentation`
