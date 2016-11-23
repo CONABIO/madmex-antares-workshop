@@ -237,7 +237,6 @@ For clouds, we use Fmask*
 
 * create the file `/workshop/fmask_landsat8_shell.sh` and copy-paste the shell [fmask_landsat8_shell.sh](fmask_landsat8_shell.sh) on it.
 
-Execute the following command:
 
 * In directory where fmask_landsat8_shell.sh is, run the following command as user root:
 
