@@ -323,25 +323,25 @@ After ingestion the raw data, we can delete the folder:
 ```
 
 
-After ingestion of raw data we have registered both in database and in folder /workshop/eodata the archives
+After ingestion of raw data we have registered both in database and in folder `/workshop/eodata` the archives
 
 ##Classification
 
 Exit madmex antares
 
-Crete directory /workshop/training_data:
+Crete directory `/workshop/training_data`:
 
 ```
 $mkdir -p /workshop/training_data
 ```
 
-Copy training data to /workshop/training_data
+Copy training data to `/workshop/training_data`
 
 ```
 $cp training_data /workshop/training_data
 ```
 
-Create directory /workshop/segmentation
+Create directory `/workshop/segmentation`
 
 ```
 $mkdir -p /workshop/segmentation
@@ -359,19 +359,21 @@ Clone https://github.com/CONABIO/docker-segmentation.git
 git clone https://github.com/CONABIO/docker-segmentation.git .
 ```
 
-Enter /workshop/segmentation/segmentation
+Change directory `/workshop/segmentation/segmentation`
 
 ```
 $cd /workshop/segmentation/segmentation
 ```
 
-Create directory /workshop/segmentation/license
+Create directory `/workshop/segmentation/license`
 
 ```
 $mkdir -p /workshop/segmentation/license
 ```
 
-Create archive `license.txt` in `/workshop/segmentation/segmentation/license`, for this workshop we can use the license: `67156997172`
+Create archive `license.txt` in `/workshop/segmentation/segmentation/license`
+
+For this workshop we can use the license: `67156997172`
 
 ```
 echo 67156997172 > /workshop/segmentation/license/license.txt
@@ -391,28 +393,28 @@ python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register hos
 
 For landsat classification:
 
-* Create directory for shapefile of landmask: /workshop/landmask/countries_caribe
+* Create directory for shapefile of landmask: `/workshop/landmask/countries_caribe`
 
 ```
 #mkdir -p /workshop/landmask/countries_caribe
 ```
 
-Copy archives of ESRI shapefile to: /workshop/landmask/countries_caribe
+Copy archives of ESRI shapefile to: `/workshop/landmask/countries_caribe`
 
 ```
 #cp countries_caribe.*  /workshop/landmask/countries_caribe
 ```
 
-Create directories /workshop/classification/landsat8
+Create directories `/workshop/classification/landsat8`
 
-Change configuration.ini (if necessary) with lines:
+Change `configuration.ini` (if necessary) with lines:
 
 ```
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
 big_folder = /workshop/classification/landsat8/
 ```
 
-Note: if you also have auxiliary files such as dem, aspect, slope, then, create directory `/workshop/dem_files`
+Note: if you also have auxiliary files such as dem, aspect, slope, then create directory `/workshop/dem_files`
 
 ```
 $mkdir -p /workshop/dem_files
@@ -434,7 +436,7 @@ aspect_file = /workshop/dem_files/aspect.tif
 slope_file = /workshop/dem_files/slope.tif
 ```
 
-If you changed configuration.ini, then you need to install madmex again:
+If you changed `configuration.ini`, you need to install madmex again:
 
 ```
 #cd /workshop/code_madmex_antares
@@ -447,15 +449,15 @@ Create directory `/workshop/classification/landsat8`
 #mkdir -p /workshop/classification/landsat8
 ```
 
-Enter to directory `/workshop/classification/landsat8`
+Change directory `/workshop/classification/landsat8`
 
 ```
 #cd /workshop/classification/landsat8
 ```
 
-Run classification landsat command for tile, and use `True`or `False` depending on your purposes.
+Run classification landsat command for a tile, and use `True`or `False` depending on your purposes.
 
-For example, our tile is `13045`, of year `2013`, a maximum of 10 cloud percentage, we don`t have auxiliary_files, we want an outlier elimination and we want that the algorithm fill holes because of clouds, then, the command will be:
+For example, our tile is `13045` of year `2013`, a maximum of 10 cloud percentage, we don`t have auxiliary_files, we want an outlier elimination and we want that the algorithm fill holes because of clouds, then, the command will be:
 
 ```
 python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --landmask_path /workshop/landmask/countries_caribe/ --outlier True --fill_holes True --auxiliary_files False
