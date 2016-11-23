@@ -218,12 +218,13 @@ The shell `ledaps_landsat8_shell.sh` creates the directory `raw_data`, so we can
 
 ```
 
-After ingesting the surface reflectances, and top of atmosphere products, we can delete the folder:
+After the ingestion of the surface reflectances, and top of atmosphere products, we can delete the folder:
 
 ```
 #rm -r /workshop/downloads_landsat/LC80130452013145LGN00/
 ```
 
+After ingestion of raw data or products, we have registered both in database and in folder /workshop/eodata the archives
 
 ##FMASK
 
@@ -265,6 +266,13 @@ The shell `fmask_landsat8_shell.sh` creates the directory `raw_data`, so we can 
 
 ```
 
+After the ingestion the fmask product, we can delete the folder:
+
+```
+#rm -r /workshop/downloads_landsat/LC80130452013145LGN00/
+```
+
+After ingestion of raw data or products, we have registered both in database and in folder /workshop/eodata the archives
 
 ##Ingest raw folder:
 
@@ -301,6 +309,18 @@ Execute the ingestion command:
 ```
 python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00
 ```
+
+After ingestion the raw data, we can delete the folder:
+
+```
+#rm -r /workshop/downloads_landsat/LC80130452013145LGN00/
+```
+
+
+After ingestion of raw data we have registered both in database and in folder /workshop/eodata the archives
+
+##Classification
+
 
 
 
