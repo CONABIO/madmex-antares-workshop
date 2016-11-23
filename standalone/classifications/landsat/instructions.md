@@ -7,6 +7,7 @@ Pull the images from docker hub:
 ```
 $sudo docker pull madmex/postgres-server
 $sudo docker pull madmex/ledaps-landsat8
+$sudo docker pull madmex/python-fmask
 $sudo docker pull madmex/antares
 ```
 
@@ -110,6 +111,10 @@ Install madmex:
 
 Enter to directory `/workshop/`
 
+```
+#cd /workshop
+```
+
 Run the next script for creating the database:
 
 ```
@@ -117,12 +122,10 @@ Run the next script for creating the database:
 ```
 
 
-
-
 #Downloading landsat8 images
 
 
-Create the directory `downloads_landsat`:
+Create directory `downloads_landsat`:
 
 ```
 #mkdir downloads_landsat
@@ -146,7 +149,7 @@ gs://earthengine-public/landsat/L8/013/045/LC80130452013161LGN00.tar.bz
 gs://earthengine-public/landsat/L8/013/045/LC80130452013177LGN01.tar.bz
 ```
 
-Download the three images and copy to directory`/workshop/downloads_landsat`:
+Download three images and copy to directory`/workshop/downloads_landsat`:
 
 ```
 #gsutil cp gs://earthengine-public/landsat/L8/013/045/LC80130452013145LGN00.tar.bz /workshop/downloads_landsat
@@ -154,12 +157,23 @@ Download the three images and copy to directory`/workshop/downloads_landsat`:
 #gstuil cp gs://earthengine-public/landsat/L8/013/045/LC80130452013177LGN01.tar.bz /workshop/downloads_landsat
 ```
 
+#Preprocessing
+
+For converting to surface reflectances, create the file `/workshop/ledaps_shell.sh` and copy-paste the shell [ledaps_landsat8_shell.sh](ledaps_landsat8_shell.sh) on it.
+
+
+
+
+
 
 
 #Ingest folders:
 
-python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00
+For registering raw data of landsat execute the following command:
 
+```
+python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00
+```
 
 
 
