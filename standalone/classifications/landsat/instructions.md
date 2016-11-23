@@ -204,19 +204,26 @@ Then, execute the following command for ingestion of products:
 #python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/srfolder
 ```
 
+(This next line will not function, because ingestion of toafolder is not yet implemented)
+
 ```
 #python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/toafolder
-```
-
-After ingesting the surface reflectances, and top of atmosphere products, we can delete the folders:
 
 ```
-#rm -r /workshop/downloads_landsat/LC80130452013145LGN00/toafolder
-```
+
+The shell `ledaps_landsat8_shell.sh` creates the directory `raw_data`, so we can also ingest this folder:
 
 ```
-#rm -r /workshop/downloads_landsat/LC80130452013145LGN00/toafolder
+#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/raw_data
+
 ```
+
+After ingesting the surface reflectances, and top of atmosphere products, we can delete the folder:
+
+```
+#rm -r /workshop/downloads_landsat/LC80130452013145LGN00/
+```
+
 
 ##FMASK
 
@@ -252,9 +259,45 @@ Then, execute the following command for ingestion of products:
 ```
 
 
+The shell `fmask_landsat8_shell.sh` creates the directory `raw_data`, so we can also ingest this folder:
+
+```
+#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/raw_data
+
+```
+
+
 ##Ingest raw folder:
 
-For registering raw data of landsat execute the following command:
+If we only want to registerFor registering raw data of landsat execute the following command:
+
+Enter to docker container madmex/antares:
+
+```
+$sudo docker exec -it madmex_antares_container /bin/bash
+```
+
+Create directory `/workshop/downloads_landsat/LC80130452013145LGN00`
+
+```
+#mkdir -p /workshop/downloads_landsat/LC80130452013145LGN00`
+```
+
+Copy the *.tar.bz file to `/workshop/downloads_landsat/LC80130452013145LGN00`
+
+```
+cp /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/downloads_landsat/LC80130452013145LGN00
+```
+
+Enter to `/workshop/downloads_landsat/LC80130452013145LGN00`
+
+Untar:
+
+```
+#tar xvf LC80130452013145LGN00.tar.bz
+```
+
+Execute the ingestion command:
 
 ```
 python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00
