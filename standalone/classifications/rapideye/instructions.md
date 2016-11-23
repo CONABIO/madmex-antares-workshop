@@ -1,3 +1,4 @@
+#Rapideye classification
 
 We have two approaches for classification of rapideye images:
 
@@ -212,4 +213,4 @@ Run classification rapideye command:
 
 ```
 python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --landmask_path /workshop/landmask/countries_caribe/ --outlier True
-```
+``
