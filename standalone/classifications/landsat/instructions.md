@@ -489,7 +489,7 @@ Change directory `/workshop/classification/landsat8`
 
 Run classification landsat command for a tile, and use `True`or `False` depending on your purposes.
 
-For example, our tile is `13045` of year `2013`, a maximum of 10 cloud percentage, we don`t have auxiliary_files, we want an outlier elimination and we want that the algorithm fill holes because of clouds, then, the command will be:
+For example, our tile is `13045` of year `2013`, a maximum of 10 cloud percentage, we don't have auxiliary_files, we want an outlier elimination and we want that the algorithm fill holes because of clouds, then, the command will be:
 
 ```
 python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --landmask_path /workshop/landmask/countries_caribe/ --outlier True --fill_holes True --auxiliary_files False
