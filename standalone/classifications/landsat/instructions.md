@@ -1,6 +1,11 @@
 #Requirements:
 
-The next commands assume that the user has sudo privileges, the ip of the machine in which we are going to perform the classification command is `172.16.9.145` and there is an installation of docker in the system : https://www.docker.com/
+* The next commands assume that the user has sudo privileges
+
+* The ip of the machine in which we are going to perform the classification command is `172.16.9.145`, and we know the password of user root
+
+* There is an installation of docker in the system : https://www.docker.com/
+
 
 Pull the images from docker hub:
 
@@ -401,7 +406,11 @@ $sudo docker exec -it madmex_antares_container /bin/bash
 Register host and command in tables of database giving the ip of the machine and the user root with it's password:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.16.9.145 madmex_run_container_nodo3 user_root root_password 22 workshop
+python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.16.9.145 madmex_run_container root root_password 22 workshop
+```
+
+```
+python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register command workshop run_container workshop.q 
 ```
 
 For landsat classification:
