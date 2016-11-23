@@ -230,11 +230,11 @@ After the ingestion of the surface reflectances, and top of atmosphere products,
 #rm -r /workshop/downloads_landsat/LC80130452013145LGN00/
 ```
 
-After ingestion of raw data or products, we have registered both in database and in folder /workshop/eodata the archives
+After ingestion of raw data or products, we have registered both in database and in folder `/workshop/eodata` the archives
 
 ##FMASK
 
-For clouds, we use Fmask*
+For clouds, we use Fmask algorithm
 
 * Exit of madmex/antares:
 
