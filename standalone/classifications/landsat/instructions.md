@@ -1,3 +1,5 @@
+#Landsat Classification
+
 #Requirements:
 
 * The next commands assume that the user has sudo privileges
@@ -432,6 +434,10 @@ Copy archives of ESRI shapefile to: `/workshop/landmask/countries_caribe`
 ```
 
 Create directories `/workshop/classification/landsat8`
+
+```
+#mkdir -p /workshop/classification/landsat8
+```
 
 Change `configuration.ini` (if necessary) with lines:
 
