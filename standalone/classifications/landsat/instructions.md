@@ -350,13 +350,10 @@ Construct image of segmentation: segmentation/segmentation:v1
 
 
 
-Enter madmex antares and register host and command in tables of database:
-
-python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.16.9.145 madmex_run_container_nodo3 root 1r0n.m4n$%%% 22 workshop
-
-python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register command workshop run_container workshop.q
+Enter madmex antares and register host and command in tables of database, we have to give the ip of the machine and the user root with it's password:
 
 
+python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.16.9.145 madmex_run_container_nodo3 user_root root_password 22 workshop
 
 
 
