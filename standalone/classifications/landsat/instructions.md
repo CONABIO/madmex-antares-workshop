@@ -129,7 +129,7 @@ Install madmex:
 #python setup.py install
 ```
 
-Change to directory `/workshop/`
+Change directory `/workshop/`
 
 ```
 #cd /workshop
@@ -145,13 +145,17 @@ Run the next script for creating the database:
 #Downloading landsat8 images
 
 
-Create directory `downloads_landsat`:
+Create directory `/workshop/downloads_landsat`:
 
 ```
-#mkdir downloads_landsat
+#mkdir /workshop/downloads_landsat
 ```
 
-Change to directory `downloads_landsat`
+Change directory `downloads_landsat`
+
+```
+#cd /workshop/downloads_landsat
+```
 
 Choose a path, row of landsat, for example: 13, 045 
 
@@ -365,7 +369,7 @@ Create directory `/workshop/segmentation`
 $mkdir -p /workshop/segmentation
 ```
 
-Change to directory `/workshop/segmentation`
+Change directory `/workshop/segmentation`
 
 ```
 cd /workshop/segmentation
