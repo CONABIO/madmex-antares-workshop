@@ -389,10 +389,10 @@ Change directory `/workshop/segmentation/segmentation`
 $cd /workshop/segmentation/segmentation
 ```
 
-Create directory `/workshop/segmentation/license`
+Create directory `/workshop/segmentation/segmentation/license`
 
 ```
-$mkdir -p /workshop/segmentation/license
+$mkdir -p /workshop/segmentation/segmentation/license
 ```
 
 Create archive `license.txt` in `/workshop/segmentation/segmentation/license`
@@ -400,7 +400,7 @@ Create archive `license.txt` in `/workshop/segmentation/segmentation/license`
 For this workshop we can use the license: `67156997172`
 
 ```
-echo 67156997172 > /workshop/segmentation/license/license.txt
+echo 67156997172 > /workshop/segmentation/segmentation/license/license.txt
 ```
 
 Enter madmex antares
