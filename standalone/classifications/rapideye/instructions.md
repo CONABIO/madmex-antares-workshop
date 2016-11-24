@@ -14,6 +14,8 @@ This approach uses images that have similar regional and temporal characteristic
 
 * The next commands assume that the user has sudo privileges
 
+* The ip of the machine in which we are going to perform the classification command is 172.16.9.145, and the password of user root
+
 * We need to have an installation of docker in the system : https://www.docker.com/
 
 Pull the next image from docker hub:
@@ -52,7 +54,7 @@ And copy-paste the next lines:
 ```
 [madmex]
 log_level = DEBUG
-antares_database = postgresql://madmex_user:madmex_user.@172.17.0.8:5432/madmex_database
+antares_database = postgresql://madmex_user:madmex_user.@172.16.9.145:5432/madmex_database
 date_format = %%Y-%%m-%%d
 rapideye_footprints_mexico_old = False
 folder_segmentation = /workshop/segmentation/segmentation:/segmentation/
