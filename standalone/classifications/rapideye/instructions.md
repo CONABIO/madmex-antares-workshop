@@ -57,8 +57,9 @@ log_level = DEBUG
 antares_database = postgresql://madmex_user:madmex_user.@172.16.9.145:5432/madmex_database
 date_format = %%Y-%%m-%%d
 rapideye_footprints_mexico_old = False
-folder_segmentation = /workshop/segmentation/segmentation:/segmentation/
-folder_segmentation_license = /workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
+folder_segmentation = /User/workshop_user/workshop/segmentation/segmentation:/segmentation/
+folder_segmentation_license = /Users/workshop_user/workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
+folder_image_for_segmentation = /Users/workshop_user/workshop/classification/rapideye_simple_lcc
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
 big_folder = /workshop/classification/rapideye_simple_lcc/
 ```
@@ -131,10 +132,10 @@ $cd /workshop/segmentation/segmentation
 ```
 
 
-Create directory `/workshop/segmentation/license`
+Create directory `/workshop/segmentation/segmentation/license`
 
 ```
-$mkdir -p /workshop/segmentation/license
+$mkdir -p /workshop/segmentation/segmentation/license
 ```
 
 Create archive `license.txt` in `/workshop/segmentation/segmentation/license`
@@ -142,7 +143,7 @@ Create archive `license.txt` in `/workshop/segmentation/segmentation/license`
 For this workshop we can use the license: `67156997172`
 
 ```
-echo 67156997172 > /workshop/segmentation/license/license.txt
+echo 67156997172 > /workshop/segmentation/segmentation/license/license.txt
 ```
 
 Enter madmex antares
