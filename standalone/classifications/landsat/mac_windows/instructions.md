@@ -107,7 +107,7 @@ rapideye_footprints_mexico_old = False
 test_folder = /workshop/eodata/
 folder_segmentation = /User/workshop_user/workshop/segmentation/segmentation:/segmentation/
 folder_segmentation_license = /Users/workshop_user/workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
-folder_image_for_segmentation = /Users/workshop_user/workshop/classification/landsat8
+big_folder_host = /Users/workshop_user/workshop/classification/landsat8:/results/
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
 big_folder = /workshop/classification/landsat8/
 ```
