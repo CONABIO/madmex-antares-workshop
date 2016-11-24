@@ -195,10 +195,30 @@ For converting to surface reflectances and getting top of atmoshpere products fo
 
 https://github.com/USGS-EROS/espa-surface-reflectance/tree/master/not-validated-prototype-lasrc
 
-* Exit of madmex/antares:
+We create a ssh-keygen with the following command. Hit enter, until the key has been generated
 
 ```
-#exit
+#ssh-keygen
+```
+
+We copy the key to user `docker` with ip `172.17.0.1`
+
+```
+ssh-copy-id -i /root/.ssh/id_rsa.pub docker@172.17.0.1
+```
+
+We type yes, and when asked for password we type `tcuser`
+
+If everything went ok, then we can execute the following command, without being asked for password
+
+```
+ssh docker@172.17.0.1
+```
+
+We exit, and return to container `madmex_antares_container`
+
+```
+docker@workshop:~$ exit
 ```
 
 * create the file `/workshop/ledaps_landsat8_shell.sh` and copy-paste the shell [ledaps_landsat8_shell.sh](ledaps_landsat8_shell.sh) on it.
@@ -218,6 +238,12 @@ https://github.com/USGS-EROS/espa-surface-reflectance/tree/master/not-validated-
 ```
 
 * In directory where ledaps_landsat8_shell.sh is, run the following command as user root:
+
+(Install wget)
+
+```
+#apt-get install wget
+```
 
 ```
 #bash ledaps_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/auxiliary_data_landsat8/ user1 password1 user2 password2 /workshop/downloads_landsat/
