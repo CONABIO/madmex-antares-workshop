@@ -105,8 +105,9 @@ antares_database = postgresql://madmex_user:madmex_user.@192.168.99.100:32851/ma
 date_format = %%Y-%%m-%%d
 rapideye_footprints_mexico_old = False
 test_folder = /workshop/eodata/
-folder_segmentation = /workshop/segmentation/segmentation:/segmentation/
-folder_segmentation_license = /workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
+folder_segmentation = /User/workshop_user/workshop/segmentation/segmentation:/segmentation/
+folder_segmentation_license = /Users/workshop_user/workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
+folder_image_for_segmentation = /Users/workshop_user/workshop/classification/landsat8
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
 big_folder = /workshop/classification/landsat8/
 ```
