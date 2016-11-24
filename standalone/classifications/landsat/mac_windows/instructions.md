@@ -104,11 +104,11 @@ log_level = DEBUG
 antares_database = postgresql://madmex_user:madmex_user.@192.168.99.100:32851/madmex_database
 date_format = %%Y-%%m-%%d
 rapideye_footprints_mexico_old = False
-test_folder = /Users/workshop_user/workshop/eodata/
-folder_segmentation = /Users/workshop_user/workshop/segmentation/segmentation:/segmentation/
-folder_segmentation_license = /Users/workshop_user/workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
-training_data = /Users/workshop_user/workshop/training_data/globalland_caribe_geo_proj.vrt
-big_folder = /Users/workshop_user/workshop/classification/landsat8/
+test_folder = /workshop/eodata/
+folder_segmentation = /workshop/segmentation/segmentation:/segmentation/
+folder_segmentation_license = /workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
+training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
+big_folder = /workshop/classification/landsat8/
 ```
 
 We exit nano with `ctrl+x` and then type `y`in your keyboard to save changes.
@@ -412,7 +412,7 @@ Change directory `/workshop/segmentation/segmentation`
 $cd /workshop/segmentation/segmentation
 ```
 
-Create directory `/workshop/segmentation/license`
+Create directory `/workshop/segmentation/segmentation/license`
 
 ```
 $mkdir -p /workshop/segmentation/segmentation/license
@@ -491,10 +491,6 @@ If you changed `configuration.ini`, you need to install madmex again:
 ```
 #cd /workshop/code_madmex_antares
 #python setup.py install
-```
-
-```
-#mkdir -p /workshop/classification/landsat8
 ```
 
 Change directory `/workshop/classification/landsat8`
