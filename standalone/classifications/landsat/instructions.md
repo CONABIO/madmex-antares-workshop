@@ -103,6 +103,7 @@ folder_segmentation = /workshop/segmentation/segmentation:/segmentation/
 folder_segmentation_license = /workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
 big_folder = /workshop/classification/landsat8/
+big_folder_host = /workshop/classification/landsat8/:/results
 ```
 
 We exit nano with `ctrl+x` and then type `y`in your keyboard to save changes.
