@@ -272,6 +272,7 @@ Change directory /workshop/classification/rapideye_simple_lcc
 #cd /workshop/classification/rapideye_simple_lcc
 ```
 
+![rep_dominicana_imagen_original.png](rep_dominicana_imagen_original.png)
 
 Run classification rapideye command:
 
