@@ -4,7 +4,8 @@
 #three,four: $3, $4 is the username and password for the http://e4ftl01.cr.usgs.gov server
 #five, six: $5, $6 is the username and password for the ladssci.nascom.nasa.gov server
 #seven : $7 is the path in the host for the temporal folder
-MADMEX_TEMP=$7
+#eigth: $8 is the path in host running docker daemon for the temporal folder
+MADMEX_TEMP=$8
 name=$(basename $1)
 newdir=$(echo $name | sed -n 's/\(L*.*\).tar.bz/\1/;p')
 dir=$MADMEX_TEMP/$newdir
@@ -87,7 +88,7 @@ cp $2/ratiomapndwiexp.hdf .
 cp $2/CMGDEM.hdf .
 echo "Surface reflectance process" >> $dir/log.txt
 ssh docker@172.17.0.1 docker run --rm -v $7/$newdir:/data -w=/data -e LEDAPS_AUX_DIR=/data -e anc=$anc -e metadataxml=$metadataxml madmex/ledaps-landsat8 /usr/local/espa-tools/bin/lasrc --xml=$metadataxml --aux=$anc --verbose --write_toa
-ssh docker@172.17.0.1 run --rm -v $7/$newdir:/data -w=/data -e newdir=$newdir -e metadataxml=$metadataxml madmex/ledaps-landsat8 /usr/local/espa-tools/bin/convert_espa_to_hdf --xml=$metadataxml --hdf=lndsr.$(echo $newdir).hdf --del_src_files
+ssh docker@172.17.0.1 docker run --rm -v $7/$newdir:/data -w=/data -e newdir=$newdir -e metadataxml=$metadataxml madmex/ledaps-landsat8 /usr/local/espa-tools/bin/convert_espa_to_hdf --xml=$metadataxml --hdf=lndsr.$(echo $newdir).hdf --del_src_files
 echo "finish surface reflectance" >> $dir/log.txt
 mv lndsr.$(echo $newdir)_MTL.txt lndsr.$(echo $newdir)_metadata.txt
 #mv lndcal.$(echo $newdir)_MTL.txt lndcal.$(echo $newdir)_metadata.txt
