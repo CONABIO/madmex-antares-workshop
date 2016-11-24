@@ -291,9 +291,14 @@ Change directory /workshop/classification/rapideye_simple_lcc
 ```
 #cd /workshop/classification/rapideye_simple_lcc
 ```
+The image that we are going to classify is from Dominican Republic:
 
 ![rep_dominicana_imagen_original.png](../rep_dominicana_imagen_original.png)
 
+The training data for this classification is:
+
+
+![rep_dominicana_training_data.png](../rep_dominicana_training_data.png)
 
 Run classification rapideye command:
 
