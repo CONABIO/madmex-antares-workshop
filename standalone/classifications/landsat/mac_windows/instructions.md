@@ -24,7 +24,7 @@ $cd /Users/workshop_user/workshop
 $docker-machine create -d virtualbox workshop
 ```
 
-* Make sure that this machine has 8 gb of ram, if not, stop it and give this amount of ram
+* Make sure that this machine has 4096 mb of ram, if not, stop it and give this amount of ram
 
 * Get the ip of the machine:
 
