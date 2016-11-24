@@ -2,7 +2,9 @@
 
 #Requirements:
 
-* We need an installation of docker tools in the system : https://www.docker.com/products/docker-toolbox that includes the client docker and docker-machine.
+* We need an installation of docker tools in the system : https://www.docker.com/products/docker-toolbox
+
+This includes the client docker and docker-machine.
 
 * An installation of virtualbox in the system: https://www.virtualbox.org/
 
