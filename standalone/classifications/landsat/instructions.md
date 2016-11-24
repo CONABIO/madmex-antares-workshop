@@ -4,7 +4,7 @@
 
 * The next commands assume that the user has sudo privileges
 
-* The ip of the machine in which we are going to perform the classification command is `172.16.9.145`, and we know the password of user root
+* The ip of the machine in which we are going to perform the classification command is `172.16.9.145`, and the password of user root
 
 * We need to have an installation of docker in the system : https://www.docker.com/
 
