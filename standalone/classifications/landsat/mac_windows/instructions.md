@@ -223,6 +223,11 @@ We exit, and return to container `madmex_antares_container`
 docker@workshop:~$ exit
 ```
 
+```
+$docker exec -it madmex_antares_container /bin/bash
+
+```
+
 * create the file `/workshop/ledaps_landsat8_shell.sh` and copy-paste the shell [ledaps_landsat8_shell.sh](ledaps_landsat8_shell.sh) on it.
 
 * Create directory: `/workshop/auxiliary_data_landsat8/`, change directory to `/workshop/auxiliary_data_landsat8` and curl the auxiliary data according to: https://github.com/USGS-EROS/espa-surface-reflectance/tree/master/not-validated-prototype-lasrc
@@ -239,7 +244,7 @@ docker@workshop:~$ exit
 #tar xvzf l8sr_auxiliary.tar.gz
 ```
 
-* In directory where ledaps_landsat8_shell.sh is, run the following command as user root:
+* In directory where ledaps_landsat8_shell.sh is, run the following command:
 
 (Install wget)
 
@@ -251,13 +256,9 @@ docker@workshop:~$ exit
 #bash ledaps_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/auxiliary_data_landsat8/ user1 password1 user2 password2 /Users/workshop_user/workshop/downloads_landsat/ /workshop/downloads_landsat
 ```
 
-If the command was successful, we will ingest the folder to database. First we enter to docker container `madmex_antares_container
+If the command was successful, we will ingest the folder to database
 
-```
-$sudo docker exec -it madmex_antares_container /bin/bash
-```
-
-Then, execute the following command for ingestion of products:
+Execute the following command for ingestion of products:
 
 
 ```
@@ -292,11 +293,6 @@ For clouds, we use Fmask algorithm:
 
 www.sciencedirect.com/science/article/pii/S0034425714005069
 
-* Exit of madmex/antares:
-
-```
-#exit
-```
 
 * create the file `/workshop/fmask_landsat8_shell.sh` and copy-paste the shell [fmask_landsat8_shell.sh](fmask_landsat8_shell.sh) on it.
 
@@ -307,13 +303,10 @@ www.sciencedirect.com/science/article/pii/S0034425714005069
 #bash fmask_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /Users/workshop_user/workshop/downloads_landsat/ /workshop/downloads_landsat
 ```
 
-If the command was successful, we will ingest the folder to database. First we enter to docker container `madmex_antares_container`:
+If the command was successful, we will ingest the folder to database.
 
-```
-$sudo docker exec -it madmex_antares_container /bin/bash
-```
 
-Then, execute the following command for ingestion of products:
+Execute the following command for ingestion of products:
 
 
 ```
@@ -338,13 +331,8 @@ After ingestion of raw data or products, we have registered both in database and
 
 ##Ingest raw folder:
 
-If we only want to register raw data of landsat execute the following command:
+If we only want to register raw data of landsat execute the following
 
-Enter to docker container `madmex_antares_container`:
-
-```
-$sudo docker exec -it madmex_antares_container /bin/bash
-```
 
 Create directory `/workshop/downloads_landsat/LC80130452013145LGN00`
 
@@ -355,10 +343,14 @@ Create directory `/workshop/downloads_landsat/LC80130452013145LGN00`
 Copy the *.tar.bz file to `/workshop/downloads_landsat/LC80130452013145LGN00`
 
 ```
-cp /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/downloads_landsat/LC80130452013145LGN00
+#cp /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/downloads_landsat/LC80130452013145LGN00
 ```
 
-Enter to `/workshop/downloads_landsat/LC80130452013145LGN00`
+Change directory to `/workshop/downloads_landsat/LC80130452013145LGN00`
+
+```
+#cd /workshop/downloads_landsat/LC80130452013145LGN00
+```
 
 Untar:
 
@@ -383,9 +375,8 @@ After ingestion of raw data we have registered both in database and in folder `/
 
 ##Classification
 
-Exit madmex antares
 
-Crete directory `/workshop/training_data`:
+Create directory `/workshop/training_data`:
 
 ```
 $mkdir -p /workshop/training_data
@@ -435,16 +426,11 @@ For this workshop we can use the license: `67156997172`
 echo 67156997172 > /workshop/segmentation/license/license.txt
 ```
 
-Enter madmex antares
+
+Register host and command in tables of database giving the ip of the machine and the user docker with it's password:
 
 ```
-$sudo docker exec -it madmex_antares_container /bin/bash
-```
-
-Register host and command in tables of database giving the ip of the machine and the user root with it's password:
-
-```
-python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.16.9.145 madmex_run_container root root_password 22 workshop
+python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.17.0.1 madmex_run_container docker tcuser 22 workshop
 ```
 
 ```
@@ -506,8 +492,6 @@ If you changed `configuration.ini`, you need to install madmex again:
 #cd /workshop/code_madmex_antares
 #python setup.py install
 ```
-
-Create directory `/workshop/classification/landsat8`
 
 ```
 #mkdir -p /workshop/classification/landsat8
