@@ -246,7 +246,7 @@ docker@workshop:~$ exit
 ```
 
 ```
-#bash ledaps_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/auxiliary_data_landsat8/ user1 password1 user2 password2 /workshop/downloads_landsat/
+#bash ledaps_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/auxiliary_data_landsat8/ user1 password1 user2 password2 /Users/workshop_user/workshop/downloads_landsat/ /workshop/downloads_landsat
 ```
 
 If the command was successful, we will ingest the folder to database. First we enter to docker container `madmex_antares_container
