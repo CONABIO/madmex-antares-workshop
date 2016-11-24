@@ -383,43 +383,43 @@ After ingestion of raw data we have registered both in database and in folder `/
 Create directory `/workshop/training_data`:
 
 ```
-$mkdir -p /workshop/training_data
+#mkdir -p /workshop/training_data
 ```
 
 Copy training data to `/workshop/training_data`
 
 ```
-$cp training_data.tif /workshop/training_data
+#cp training_data.tif /workshop/training_data
 ```
 
 Create directory `/workshop/segmentation`
 
 ```
-$mkdir -p /workshop/segmentation
+#mkdir -p /workshop/segmentation
 ```
 
 Change directory `/workshop/segmentation`
 
 ```
-cd /workshop/segmentation
+#cd /workshop/segmentation
 ```
 
 Clone https://github.com/CONABIO/docker-segmentation.git
 
 ```
-git clone https://github.com/CONABIO/docker-segmentation.git .
+#git clone https://github.com/CONABIO/docker-segmentation.git .
 ```
 
 Change directory `/workshop/segmentation/segmentation`
 
 ```
-$cd /workshop/segmentation/segmentation
+#cd /workshop/segmentation/segmentation
 ```
 
 Create directory `/workshop/segmentation/segmentation/license`
 
 ```
-$mkdir -p /workshop/segmentation/segmentation/license
+#mkdir -p /workshop/segmentation/segmentation/license
 ```
 
 Create archive `license.txt` in `/workshop/segmentation/segmentation/license`
@@ -427,18 +427,18 @@ Create archive `license.txt` in `/workshop/segmentation/segmentation/license`
 For this workshop we can use the license: `67156997172`
 
 ```
-echo 67156997172 > /workshop/segmentation/segmentation/license/license.txt
+#echo 67156997172 > /workshop/segmentation/segmentation/license/license.txt
 ```
 
 
 Register host and command in tables of database giving the ip of the machine and the user docker with it's password:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.17.0.1 madmex_run_container docker tcuser 22 workshop
+#python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.17.0.1 madmex_run_container docker tcuser 22 workshop
 ```
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register command workshop run_container workshop.q 
+#python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register command workshop run_container workshop.q 
 ```
 
 For landsat classification:
@@ -471,7 +471,7 @@ big_folder = /workshop/classification/landsat8/
 Note: if you also have auxiliary files such as dem, aspect, slope, then create directory `/workshop/dem_files`
 
 ```
-$mkdir -p /workshop/dem_files
+#mkdir -p /workshop/dem_files
 ```
 
 and copy dem, aspect, slope files to `/workshop/dem_files`
@@ -508,7 +508,7 @@ Run classification landsat command for a tile, and use `True`or `False` dependin
 For example, our tile is `13045` of year `2013`, a maximum of 10 cloud percentage, we don't have auxiliary_files, we want an outlier elimination and we want that the algorithm fill holes because of clouds, then, the command will be:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --landmask_path /workshop/landmask/countries_caribe/ --outlier True --fill_holes True --auxiliary_files False
+#python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --landmask_path /workshop/landmask/countries_caribe/ --outlier True --fill_holes True --auxiliary_files False
 ```
 
 
