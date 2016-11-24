@@ -278,3 +278,6 @@ Run classification rapideye command:
 ```
 python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --outlier True
 ```
+
+![rep_dominicana.png](rep_dominicana.png)
+
