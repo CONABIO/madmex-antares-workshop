@@ -302,3 +302,14 @@ python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassificat
 ```
 
 ![rep_dominicana.png](../rep_dominicana.png)
+
+Jamaica:
+
+![jamaica_imagen_original.png](../jamaica_imagen_original.png)
+
+```
+python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/jamaica/1847306_2014-10-06_RE5_3A_275562.tif --outlier True
+```
+![jamaica_globeland30.png](../jamaica_globeland30.png)
+
+
