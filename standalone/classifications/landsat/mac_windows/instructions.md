@@ -304,7 +304,7 @@ www.sciencedirect.com/science/article/pii/S0034425714005069
 * In directory where fmask_landsat8_shell.sh is, run the following command as user root:
 
 ```
-#bash fmask_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /workshop/downloads_landsat/
+#bash fmask_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /Users/workshop_user/workshop/downloads_landsat/ /workshop/downloads_landsat
 ```
 
 If the command was successful, we will ingest the folder to database. First we enter to docker container `madmex_antares_container`:
