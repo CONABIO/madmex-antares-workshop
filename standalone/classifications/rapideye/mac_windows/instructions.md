@@ -130,6 +130,7 @@ folder_segmentation_license = /Users/workshop_user/workshop/segmentation/segment
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
 big_folder = /workshop/classification/rapideye_simple_lcc/
 big_folder_host = /Users/workshop_user/workshop/classification/rapideye_simple_lcc/:/results
+landmask_path /workshop/landmask/countries_caribe/
 ```
 
 We exit nano with `ctrl+x` and then type `y`in your keyboard to save changes.
@@ -295,5 +296,5 @@ Change directory /workshop/classification/rapideye_simple_lcc
 Run classification rapideye command:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --landmask_path /workshop/landmask/countries_caribe/ --outlier True
+python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --outlier True
 ```
