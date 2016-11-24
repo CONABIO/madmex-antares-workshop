@@ -36,6 +36,53 @@ Change directory to directory `workshop`
 $cd /workshop
 ```
 
+#Setting up the database
+
+
+Using the command line of your system, run the next line:
+
+```
+$sudo docker run --hostname database --name postgres-server-madmex \
+-v /workshop:/entry_for_database -p 32852:22 \
+-p 32851:5432 -dt madmex/postgres-server
+```
+
+Get the ip of the docker container that is running:
+
+```
+$sudo docker inspect postgres-server-madmex|grep IPAddress\"
+```
+
+Assume that is ip is 172.17.0.2
+
+Create user `madmex_user` with password `madmex_user.` using the next line:
+
+```
+$sudo docker exec -u=postgres -it postgres-server-madmex \
+psql -h 172.17.0.2 -p 5432 \
+-c "CREATE USER madmex_user WITH PASSWORD 'madmex_user.'"
+```
+
+Create database `madmex_database` with owner `madmex_user`
+
+```
+$sudo docker exec -u=postgres -it postgres-server-madmex psql -h 172.17.0.2 -p 5432 -c "CREATE DATABASE madmex_database WITH OWNER = madmex_user ENCODING = 'UTF8' TABLESPACE = pg_default TEMPLATE = template0 CONNECTION LIMIT = -1;"
+```
+
+Install extension postgis in `madmex_database`
+
+```
+$sudo docker exec -u=postgres -it postgres-server-madmex psql -h 172.17.0.2 -p 5432 -d madmex_database -c "CREATE EXTENSION postgis"
+$sudo docker exec -u=postgres -it postgres-server-madmex psql -h 172.17.0.2 -p 5432 -d madmex_database -c "CREATE EXTENSION postgis_topology"
+```
+
+Clone madmex code into directory: `/workshop/code`
+
+```
+$sudo git clone https://github.com/CONABIO/madmex-antares.git code_madmex_antares
+```
+
+
 Create directory `/workshop/configuration`
 
 ```
@@ -62,6 +109,7 @@ folder_segmentation_license = /Users/workshop_user/workshop/segmentation/segment
 folder_image_for_segmentation = /Users/workshop_user/workshop/classification/rapideye_simple_lcc
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
 big_folder = /workshop/classification/rapideye_simple_lcc/
+big_folder_host = /workshop/classification/rapideye_simple_lcc/:/results
 ```
 
 We exit nano with `ctrl+x` and then type `y`in your keyboard to save changes.
@@ -88,6 +136,18 @@ Install madmex:
 
 ```
 #python setup.py install
+```
+
+Change directory `/workshop/`
+
+```
+#cd /workshop
+```
+
+Run the next script for creating the database:
+
+```
+#python /workshop/code_madmex_antares/madmex/persistence/database/populate.py
 ```
 
 
