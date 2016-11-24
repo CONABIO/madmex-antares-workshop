@@ -106,7 +106,6 @@ date_format = %%Y-%%m-%%d
 rapideye_footprints_mexico_old = False
 folder_segmentation = /User/workshop_user/workshop/segmentation/segmentation:/segmentation/
 folder_segmentation_license = /Users/workshop_user/workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
-folder_image_for_segmentation = /Users/workshop_user/workshop/classification/rapideye_simple_lcc
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
 big_folder = /workshop/classification/rapideye_simple_lcc/
 big_folder_host = /workshop/classification/rapideye_simple_lcc/:/results
