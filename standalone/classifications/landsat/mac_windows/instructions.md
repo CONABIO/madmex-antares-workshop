@@ -529,7 +529,11 @@ python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --s
 ![cuba_classif_globeland30_nofill_holes.png](../cuba_classif_globeland30_no_fill_holes.png)
 
 
+```
+python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-06-11 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes True --auxiliary_files False --all_indexes False
+```
 
+![cuba_classif_globeland30_just_ndvi_two_images.png](../cuba_classif_globeland30_just_ndvi_two_images.png)
 
 
 
