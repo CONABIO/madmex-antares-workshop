@@ -267,20 +267,20 @@ Execute the following command for ingestion of products:
 
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/srfolder
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/srfolder
 ```
 
 (This next line will not function, because ingestion of toafolder is not yet implemented)
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/toafolder
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/toafolder
 
 ```
 
 The shell `ledaps_landsat8_shell.sh` creates the directory `raw_data`, so we can also ingest this folder:
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/raw_data
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/raw_data
 
 ```
 
@@ -315,14 +315,14 @@ Execute the following command for ingestion of products:
 
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/fmaskfolder
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/fmaskfolder
 ```
 
 
 The shell `fmask_landsat8_shell.sh` creates the directory `raw_data`, so we can also ingest this folder:
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/raw_data
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/raw_data
 
 ```
 
@@ -366,7 +366,7 @@ Untar:
 Execute the ingestion command:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00
 ```
 
 After ingestion the raw data, we can delete the folder:
@@ -435,11 +435,11 @@ For this workshop we can use the license: `67156997172`
 Register host and command in tables of database giving the ip of the machine and the user docker with it's password:
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.17.0.1 madmex_run_container docker tcuser 22 workshop
+#madmex remotecall --register host 172.17.0.1 madmex_run_container docker tcuser 22 workshop
 ```
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register command workshop run_container workshop.q 
+#madmex remotecall --register command workshop run_container workshop.q 
 ```
 
 For landsat classification:
@@ -511,10 +511,10 @@ Training data from globeland30
 
 Run classification landsat command for a tile, and use `True`or `False` depending on your purposes.
 
-For example, our tile is `13045` of year `2013`, a maximum of 10 cloud percentage, we don't have auxiliary_files, we want an outlier elimination and we want that the algorithm fill holes because of clouds, then, the command will be:
+For example, our tile is `13045` of year `2013`, a maximum of 10 cloud percentage, we don't have auxiliary_files, we want an outlier elimination and we want that the algorithm fill holes because of clouds and calculate all indexes, then, the command will be:
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes True --auxiliary_files False --all_indexes False
+#madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes True --auxiliary_files False --all_indexes True
 ```
 
 The result of the classification command:
@@ -523,17 +523,21 @@ The result of the classification command:
 
 We can use different options:
 
+Don't fill holes:
+
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes False --auxiliary_files False
+#madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes False --auxiliary_files False --all_indexes True
 ```
 ![cuba_classif_globeland30_nofill_holes.png](../cuba_classif_globeland30_no_fill_holes.png)
 
+Use images between 2013-01-01 and 2013-06-11 and just calculate NDVI index
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-06-11 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes True --auxiliary_files False --all_indexes False
+#madmex landsatclassification --start_date 2013-01-01 --end_date 2013-06-11 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes True --auxiliary_files False --all_indexes False
 ```
 
 ![cuba_classif_globeland30_just_ndvi_two_images.png](../cuba_classif_globeland30_just_ndvi_two_images.png)
+
 
 
 
