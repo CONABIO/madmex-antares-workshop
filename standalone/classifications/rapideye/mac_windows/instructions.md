@@ -236,11 +236,11 @@ $sudo docker exec -it madmex_antares_container /bin/bash
 Register host and command in tables of database giving the ip of the machine and the user docker with it's password:
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.17.0.1 madmex_run_container docker tcuser 22 workshop
+#madmex remotecall --register host 172.17.0.1 madmex_run_container docker tcuser 22 workshop
 ```
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register command workshop run_container workshop.q 
+#madmex remotecall --register command workshop run_container workshop.q 
 ```
 
 For rapideye classification
@@ -303,7 +303,7 @@ The training data for this classification is:
 Run classification rapideye command:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --outlier True
+#madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --outlier True
 ```
 
 ![rep_dominicana.png](../rep_dominicana.png)
@@ -313,7 +313,7 @@ Jamaica original image:
 ![jamaica_imagen_original.png](../jamaica_imagen_original.png)
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/jamaica/1847306_2014-10-06_RE5_3A_275562.tif --outlier True
+#madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/jamaica/1847306_2014-10-06_RE5_3A_275562.tif --outlier True
 ```
 Training data from globeland30
 
