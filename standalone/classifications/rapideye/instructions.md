@@ -216,11 +216,11 @@ $sudo docker exec -it madmex_antares_container /bin/bash
 Register host and command in tables of database giving the ip of the machine and the user root with it's password:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.16.9.145 madmex_run_container root root_password 22 workshop
+madmex remotecall --register host 172.16.9.145 madmex_run_container root root_password 22 workshop
 ```
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register command workshop run_container workshop.q 
+madmex remotecall --register command workshop run_container workshop.q 
 ```
 
 For rapideye classification
@@ -277,7 +277,7 @@ Change directory /workshop/classification/rapideye_simple_lcc
 Run classification rapideye command:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --outlier True
+madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --outlier True
 ```
 
 ![rep_dominicana.png](rep_dominicana.png)
