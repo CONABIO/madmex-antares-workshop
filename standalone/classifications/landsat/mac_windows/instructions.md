@@ -521,9 +521,12 @@ The result of the classification command:
 
 ![cuba_classif_globeland30.png](../cuba_classif_globeland30.png)
 
+We can use different options:
 
-
-
+```
+python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes False --auxiliary_files False
+```
+![cuba_classif_globeland30_nofill_holes.png](../cuba_classif_globeland30_no_fill_holes.png)
 
 
 
