@@ -315,11 +315,20 @@ Jamaica original image:
 ```
 python /workshop/code_madmex_antares/madmex/bin/madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/jamaica/1847306_2014-10-06_RE5_3A_275562.tif --outlier True
 ```
-Training data:
+Training data from globeland30
 
 ![jamaica_training_data.png](../jamaica_training_data.png)
 
 Result of classification:
 ![jamaica_globeland30.png](../jamaica_globeland30.png)
+
+Training data from ESA2010
+
+![jamaica_training_data_esa2010.png](../jamaica_training_data_esa2010.png)
+
+Result of classification:
+
+![jamaica_esa2010.png](../jamaica_esa2010.png)
+
 
 
