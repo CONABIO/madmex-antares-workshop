@@ -231,20 +231,20 @@ Then, execute the following command for ingestion of products:
 
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/srfolder
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/srfolder
 ```
 
 (This next line will not function, because ingestion of toafolder is not yet implemented)
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/toafolder
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/toafolder
 
 ```
 
 The shell `ledaps_landsat8_shell.sh` creates the directory `raw_data`, so we can also ingest this folder:
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/raw_data
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/raw_data
 
 ```
 
@@ -287,14 +287,14 @@ Then, execute the following command for ingestion of products:
 
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/fmaskfolder
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/fmaskfolder
 ```
 
 
 The shell `fmask_landsat8_shell.sh` creates the directory `raw_data`, so we can also ingest this folder:
 
 ```
-#python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/raw_data
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00/raw_data
 
 ```
 
@@ -339,7 +339,7 @@ Untar:
 Execute the ingestion command:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00
+#madmex ingest --path /workshop/downloads_landsat/LC80130452013145LGN00
 ```
 
 After ingestion the raw data, we can delete the folder:
@@ -414,11 +414,11 @@ $sudo docker exec -it madmex_antares_container /bin/bash
 Register host and command in tables of database giving the ip of the machine and the user root with it's password:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register host 172.16.9.145 madmex_run_container root root_password 22 workshop
+#madmex remotecall --register host 172.16.9.145 madmex_run_container root root_password 22 workshop
 ```
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex remotecall --register command workshop run_container workshop.q 
+#madmex remotecall --register command workshop run_container workshop.q 
 ```
 
 For landsat classification:
@@ -494,7 +494,7 @@ Run classification landsat command for a tile, and use `True`or `False` dependin
 For example, our tile is `13045` of year `2013`, a maximum of 10 cloud percentage, we don't have auxiliary_files, we want an outlier elimination and we want that the algorithm fill holes because of clouds, then, the command will be:
 
 ```
-python /workshop/code_madmex_antares/madmex/bin/madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes True --auxiliary_files False --all_indexes False
+#madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes True --auxiliary_files False --all_indexes False
 ```
 
 
