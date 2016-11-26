@@ -172,6 +172,10 @@ Run the next script for creating the database:
 #python /workshop/code_madmex_antares/madmex/persistence/database/populate.py
 ```
 
+![Database_madmex_antares.png](../database_madmex_antares_image/Database_madmex_antares.png)
+
+
+
 
 ##Classification
 
