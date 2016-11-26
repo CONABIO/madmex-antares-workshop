@@ -544,6 +544,8 @@ Don't fill holes:
 ```
 ![cuba_classif_globeland30_nofill_holes.png](../result_images/cuba_classif_globeland30_no_fill_holes.png)
 
+<img src="../result_images/legend_globalland30m.png" width="30%">
+
 Use images between 2013-01-01 and 2013-06-11 and just calculate NDVI index
 
 ```
