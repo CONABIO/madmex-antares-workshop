@@ -322,7 +322,7 @@ Training data from globeland30
 
 ![jamaica_training_data.png](../result_images/jamaica_training_data.png)
 
-<img src="../result_images/legend_globalland30m.png" width="40%">
+<img src="../result_images/legend_globalland30m.png" width="20%">
 
 Result of classification:
 ![jamaica_globeland30.png](../result_images/jamaica_globeland30.png)
