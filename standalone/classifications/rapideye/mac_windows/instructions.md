@@ -290,7 +290,7 @@ If you changed `configuration.ini`, you need to install madmex again:
 #python setup.py install
 ```
 
-Change directory /workshop/classification/rapideye_simple_lcc
+Change directory `/workshop/classification/rapideye_simple_lcc`
 
 ```
 #cd /workshop/classification/rapideye_simple_lcc
