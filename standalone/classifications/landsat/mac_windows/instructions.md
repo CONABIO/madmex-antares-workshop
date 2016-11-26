@@ -508,7 +508,7 @@ Training data from globeland30
 
 ![cuba_training_data_globeland30.png](../cuba_training_data_globeland30.png)
 
-![legend_globalland30m.png](../result_images/legend_globalland30m.png =100x20)
+![legend_globalland30m.png](../result_images/legend_globalland30m.png =20x)
 
 Run classification landsat command for a tile, and use `True`or `False` depending on your purposes.
 
