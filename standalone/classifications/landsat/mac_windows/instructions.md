@@ -342,7 +342,7 @@ After ingestion of raw data or products, we have registered both in database and
 
 ![cuba_fmask_2013_05_25.png](../result_images/cuba_fmask_2013_05_25.png)
 
-<img src="../result_images/cuba_fmask_2013_05_25_legend.png" width="30%">
+<img src="../result_images/cuba_fmask_2013_05_25_legend.png" width="20%">
 
 ##Ingest raw folder:
 
