@@ -196,6 +196,12 @@ Download three images and copy to directory`/workshop/downloads_landsat`:
 #gsutil cp gs://earthengine-public/landsat/L8/013/045/LC80130452013177LGN01.tar.bz /workshop/downloads_landsat
 ```
 
+We can use the command `gdal_merge.py` to visualize an image made from stacking band2, band3, band4:
+
+```
+#gdal_merge.py LC80130452013145LGN00_B1.TIF LC80130452013145LGN00_B2.TIF LC80130452013145LGN00_B3.TIF LC80130452013145LGN00_B4.TIF LC80130452013145LGN00_B5.TIF LC80130452013145LGN00_B6.TIF -separate -o 2013145_merged.tif
+```
+
 ![cuba_imagen_original_2013_05_25.png](../result_images/cuba_imagen_original_2013_05_25.png)
 
 #Preprocessing and ingestion
@@ -295,6 +301,12 @@ After the ingestion of the surface reflectances, and top of atmosphere products,
 ```
 
 After ingestion of raw data or products, we have registered both in database and in folder `/workshop/eodata` the archives
+
+We can use the command `gdal_merge.py` to visualize an image made from stacking band2, band3, band4:
+
+```
+gdal_merge.py HDF4_EOS:EOS_GRID:"lndsr.LC80130452013145LGN00.hdf":Grid:sr_band2 HDF4_EOS:EOS_GRID:"lndsr.LC80130452013145LGN00.hdf":Grid:sr_band3 HDF4_EOS:EOS_GRID:"lndsr.LC80130452013145LGN00.hdf":Grid:sr_band4 -separate -o 2013145_sr.tif
+```
 
 ![cuba_sr_2013_05_25.png](../result_images/cuba_sr_2013_05_25.png)
 
