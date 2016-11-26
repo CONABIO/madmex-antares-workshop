@@ -159,7 +159,12 @@ Run the next script for creating the database:
 #python /workshop/code_madmex_antares/madmex/persistence/database/populate.py
 ```
 
+With dbvisualizer, for example, we can have a picture of the database:
+
 ![Database_madmex_antares.png](../database_madmex_antares_image/Database_madmex_antares.png)
+
+
+Dbvisualizer: https://www.dbvis.com/download/
 
 
 #Downloading landsat8 images
