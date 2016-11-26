@@ -5,6 +5,7 @@ A brief explanation of the files you can find in this repository:
 You can find more information about landsat8 in:
 
 http://landsat.usgs.gov/landsat8.php
+
 http://landsat.usgs.gov/band_designations_landsat_satellites.php
 
 * `fmask_landsat8_shell.sh` contains a shell script to be used with `instructions.md` for a fmask processing.
