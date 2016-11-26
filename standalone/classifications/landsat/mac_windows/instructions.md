@@ -506,7 +506,7 @@ Change directory `/workshop/classification/landsat8`
 
 Training data from globeland30
 
-![cuba_training_data_globeland30.png](../cuba_training_data_globeland30.png)
+![cuba_training_data_globeland30.png](../result_imgages/cuba_training_data_globeland30.png)
 
 <img src="../result_images/legend_globalland30m.png" width="40%">
 
@@ -520,7 +520,7 @@ For example, our tile is `13045` (from Cuba) of year `2013`, a maximum of 10 clo
 
 The result of the classification command:
 
-![cuba_classif_globeland30.png](../cuba_classif_globeland30.png)
+![cuba_classif_globeland30.png](../result_images/cuba_classif_globeland30.png)
 
 We can use different options:
 
@@ -529,7 +529,7 @@ Don't fill holes:
 ```
 #madmex landsatclassification --start_date 2013-01-01 --end_date 2013-12-31 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes False --auxiliary_files False --all_indexes True
 ```
-![cuba_classif_globeland30_nofill_holes.png](../cuba_classif_globeland30_no_fill_holes.png)
+![cuba_classif_globeland30_nofill_holes.png](../result_images/cuba_classif_globeland30_no_fill_holes.png)
 
 Use images between 2013-01-01 and 2013-06-11 and just calculate NDVI index
 
@@ -537,7 +537,7 @@ Use images between 2013-01-01 and 2013-06-11 and just calculate NDVI index
 #madmex landsatclassification --start_date 2013-01-01 --end_date 2013-06-11 --satellite 17 --cloud_coverage 10 --gridid 13045 --outlier True --fill_holes True --auxiliary_files False --all_indexes False
 ```
 
-![cuba_classif_globeland30_just_ndvi_two_images.png](../cuba_classif_globeland30_just_ndvi_two_images.png)
+![cuba_classif_globeland30_just_ndvi_two_images.png](../result_images/cuba_classif_globeland30_just_ndvi_two_images.png)
 
 
 
