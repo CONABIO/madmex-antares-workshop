@@ -38,6 +38,12 @@ $docker-machine create -d virtualbox workshop
 
 * Make sure that this machine has at least 6 gb of ram, if not, stop it and give this amount of ram
 
+```
+$docker-machine stop workshop
+```
+And go to virtualbox to adjust ram.
+
+
 * Get the ip of the machine:
 
 ```
@@ -290,7 +296,7 @@ If you changed `configuration.ini`, you need to install madmex again:
 #python setup.py install
 ```
 
-Change directory `/workshop/classification/rapideye_simple_lcc`
+Change directory `/workshop/classification/rapideye_simple_lcc
 
 ```
 #cd /workshop/classification/rapideye_simple_lcc
