@@ -300,7 +300,7 @@ The training data for this classification is:
 
 ![rep_dominicana_training_data.png](../result_images/rep_dominicana_training_data.png)
 
-<img src="../result_images/legend_globalland30m.png" width="40%">
+<img src="../result_images/legend_globalland30m.png" width="30%">
 
 
 Run classification rapideye command:
@@ -322,7 +322,7 @@ Training data from globeland30
 
 ![jamaica_training_data.png](../result_images/jamaica_training_data.png)
 
-<img src="../result_images/legend_globalland30m.png" width="20%">
+<img src="../result_images/legend_globalland30m.png" width="30%">
 
 Result of classification:
 ![jamaica_globeland30.png](../result_images/jamaica_globeland30.png)
