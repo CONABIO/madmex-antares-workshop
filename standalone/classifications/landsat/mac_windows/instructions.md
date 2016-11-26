@@ -26,7 +26,12 @@ $cd /Users/workshop_user/workshop
 $docker-machine create -d virtualbox workshop
 ```
 
-* Make sure that this machine has at least 8 gb of ram, if not, stop it and give this amount of ram
+* Make sure that this machine has at least 8 gb of ram, if not, stop it and give this amount of ram:
+
+```
+$docker-machine stop workshop
+```
+And go to virtualbox to adjust ram.
 
 * Get the ip of the machine:
 
@@ -313,6 +318,9 @@ For clouds, we use Fmask algorithm:
 
 www.sciencedirect.com/science/article/pii/S0034425714005069
 
+In particular, we use the implementation:
+
+http://pythonfmask.org/en/latest/
 
 * create the file `/workshop/fmask_landsat8_shell.sh` and copy-paste the shell [fmask_landsat8_shell.sh](fmask_landsat8_shell.sh) on it.
 
