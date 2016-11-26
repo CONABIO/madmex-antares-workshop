@@ -508,9 +508,8 @@ Training data from globeland30
 
 ![cuba_training_data_globeland30.png](../cuba_training_data_globeland30.png)
 
-![legend_globalland30m.png](../result_images/legend_globalland30m.png){:height="1px" width="1px"}
-
 <img src="../result_images/legend_globalland30m.png" width="40%">
+
 Run classification landsat command for a tile, and use `True`or `False` depending on your purposes.
 
 For example, our tile is `13045` (from Cuba) of year `2013`, a maximum of 10 cloud percentage, we don't have auxiliary_files, we want an outlier elimination and we want that the algorithm fill holes because of clouds and calculate all indexes, then, the command will be:
