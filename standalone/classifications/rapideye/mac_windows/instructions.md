@@ -293,12 +293,15 @@ Change directory /workshop/classification/rapideye_simple_lcc
 ```
 The image that we are going to classify is from Dominican Republic:
 
-![rep_dominicana_imagen_original.png](../rep_dominicana_imagen_original.png)
+![rep_dominicana_imagen_original.png](../result_images/rep_dominicana_imagen_original.png)
 
 The training data for this classification is:
 
 
-![rep_dominicana_training_data.png](../rep_dominicana_training_data.png)
+![rep_dominicana_training_data.png](../result_images/rep_dominicana_training_data.png)
+
+<img src="../result_images/legend_globalland30m.png" width="40%">
+
 
 Run classification rapideye command:
 
@@ -306,29 +309,33 @@ Run classification rapideye command:
 #madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --outlier True
 ```
 
-![rep_dominicana.png](../rep_dominicana.png)
+![rep_dominicana.png](../result_images/rep_dominicana.png)
 
 Jamaica original image:
 
-![jamaica_imagen_original.png](../jamaica_imagen_original.png)
+![jamaica_imagen_original.png](../result_images/jamaica_imagen_original.png)
 
 ```
 #madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/jamaica/1847306_2014-10-06_RE5_3A_275562.tif --outlier True
 ```
 Training data from globeland30
 
-![jamaica_training_data.png](../jamaica_training_data.png)
+![jamaica_training_data.png](../result_images/jamaica_training_data.png)
+
+<img src="../result_images/legend_globalland30m.png" width="40%">
 
 Result of classification:
-![jamaica_globeland30.png](../jamaica_globeland30.png)
+![jamaica_globeland30.png](../result_images/jamaica_globeland30.png)
 
 Training data from ESA2010
 
-![jamaica_training_data_esa2010.png](../jamaica_training_data_esa2010.png)
+![jamaica_training_data_esa2010.png](../result_images/jamaica_training_data_esa2010.png)
+
+<img src="../result_images/legend_ESA.png" width="40%">
 
 Result of classification:
 
-![jamaica_esa2010.png](../jamaica_esa2010.png)
+![jamaica_esa2010.png](../result_images/jamaica_esa2010.png)
 
 
 
