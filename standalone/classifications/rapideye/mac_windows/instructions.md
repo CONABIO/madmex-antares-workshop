@@ -331,7 +331,7 @@ Training data from ESA2010
 
 ![jamaica_training_data_esa2010.png](../result_images/jamaica_training_data_esa2010.png)
 
-<img src="../result_images/legend_ESA.png" width="50%">
+<img src="../result_images/legend_ESA.png" width="60%">
 
 Result of classification:
 
