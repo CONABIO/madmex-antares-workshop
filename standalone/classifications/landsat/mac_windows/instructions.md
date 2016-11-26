@@ -506,7 +506,7 @@ Change directory `/workshop/classification/landsat8`
 
 Training data from globeland30
 
-![cuba_training_data_globeland30.png](../result_imgages/cuba_training_data_globeland30.png)
+![cuba_training_data_globeland30.png](../result_images/cuba_training_data_globeland30.png)
 
 <img src="../result_images/legend_globalland30m.png" width="40%">
 
