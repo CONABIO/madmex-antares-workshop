@@ -221,7 +221,7 @@ We create a ssh-keygen with the following command. Hit enter, until the key has 
 We copy the key to user `docker` with ip `172.17.0.1`
 
 ```
-ssh-copy-id -i /root/.ssh/id_rsa.pub docker@172.17.0.1
+#ssh-copy-id -i /root/.ssh/id_rsa.pub docker@172.17.0.1
 ```
 
 We type yes, and when asked for password we type `tcuser`
@@ -229,18 +229,13 @@ We type yes, and when asked for password we type `tcuser`
 If everything went ok, then we can execute the following command, without being asked for password
 
 ```
-ssh docker@172.17.0.1
+#ssh docker@172.17.0.1
 ```
 
-We exit, and return to container `madmex_antares_container`
+We exit to return to container `madmex_antares_container`
 
 ```
 docker@workshop:~$ exit
-```
-
-```
-$docker exec -it madmex_antares_container /bin/bash
-
 ```
 
 * create the file `/workshop/ledaps_landsat8_shell.sh` and copy-paste the shell [ledaps_landsat8_shell.sh](ledaps_landsat8_shell.sh) on it.
@@ -305,7 +300,7 @@ After ingestion of raw data or products, we have registered both in database and
 We can use the command `gdal_merge.py` to visualize the first image processed with ledaps, stacking the bands 2, 3, 4
 
 ```
-gdal_merge.py HDF4_EOS:EOS_GRID:"lndsr.LC80130452013145LGN00.hdf":Grid:sr_band2 HDF4_EOS:EOS_GRID:"lndsr.LC80130452013145LGN00.hdf":Grid:sr_band3 HDF4_EOS:EOS_GRID:"lndsr.LC80130452013145LGN00.hdf":Grid:sr_band4 -separate -o 2013145_sr.tif
+#gdal_merge.py HDF4_EOS:EOS_GRID:"lndsr.LC80130452013145LGN00.hdf":Grid:sr_band2 HDF4_EOS:EOS_GRID:"lndsr.LC80130452013145LGN00.hdf":Grid:sr_band3 HDF4_EOS:EOS_GRID:"lndsr.LC80130452013145LGN00.hdf":Grid:sr_band4 -separate -o 2013145_sr.tif
 ```
 
 ![cuba_sr_2013_05_25.png](../result_images/cuba_sr_2013_05_25.png)
