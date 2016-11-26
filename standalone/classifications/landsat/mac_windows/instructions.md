@@ -194,6 +194,8 @@ Download three images and copy to directory`/workshop/downloads_landsat`:
 #gsutil cp gs://earthengine-public/landsat/L8/013/045/LC80130452013177LGN01.tar.bz /workshop/downloads_landsat
 ```
 
+![cuba_imagen_original_2013_05_25.png](../result_images/cuba_imagen_original_2013_05_25.png)
+
 #Preprocessing and ingestion
 
 ##LEDAPS
@@ -292,6 +294,10 @@ After the ingestion of the surface reflectances, and top of atmosphere products,
 
 After ingestion of raw data or products, we have registered both in database and in folder `/workshop/eodata` the archives
 
+![cuba_sr_2013_05_25.png](../result_images/cuba_sr_2013_05_25.png)
+
+
+
 ##FMASK
 
 For clouds, we use Fmask algorithm: 
@@ -333,6 +339,10 @@ After the ingestion the fmask product, we can delete the folder:
 ```
 
 After ingestion of raw data or products, we have registered both in database and in folder /workshop/eodata the archives
+
+![cuba_fmask_2013_05_25.png](../result_images/cuba_fmask_2013_05_25.png)
+
+<img src="../result_images/cuba_fmask_2013_05_25_legend.png" width="30%">
 
 ##Ingest raw folder:
 
