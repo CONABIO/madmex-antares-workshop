@@ -328,7 +328,7 @@ http://pythonfmask.org/en/latest/
 * create the file `/workshop/fmask_landsat8_shell.sh` and copy-paste the shell [fmask_landsat8_shell.sh](fmask_landsat8_shell.sh) on it.
 
 
-* In directory where fmask_landsat8_shell.sh is, run the following command as user root:
+* In directory where fmask_landsat8_shell.sh is, run the following command:
 
 ```
 #bash fmask_landsat8_shell.sh /workshop/downloads_landsat/LC80130452013145LGN00.tar.bz /Users/workshop_user/workshop/downloads_landsat/ /workshop/downloads_landsat
