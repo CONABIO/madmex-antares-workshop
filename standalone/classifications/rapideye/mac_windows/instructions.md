@@ -56,7 +56,10 @@ Assume this ip is `192.168.99.100`
 Pull the next image from docker hub:
 
 ```
+$docker $(docker-machine config workshop) pull madmex/postgres-server
 $docker $(docker-machine config workshop) pull madmex/antares
+$docker $(docker-machine config workshop) pull madmex/segmentation
+$docker $(docker-machine config workshop) pull madmex/c5_execution
 ```
 
 Create a directory `workshop` with the next line:
@@ -187,7 +190,7 @@ Dbvisualizer: https://www.dbvis.com/download/
 ##Classification
 
 
-Crete directory `/workshop/training_data`:
+Create directory `/workshop/training_data`:
 
 ```
 $mkdir -p /workshop/training_data
@@ -208,13 +211,13 @@ $mkdir -p /workshop/segmentation
 Change directory `/workshop/segmentation`
 
 ```
-cd /workshop/segmentation
+$cd /workshop/segmentation
 ```
 
 Clone https://github.com/CONABIO/docker-segmentation.git
 
 ```
-git clone https://github.com/CONABIO/docker-segmentation.git .
+$git clone https://github.com/CONABIO/docker-segmentation.git .
 ```
 
 Change directory `/workshop/segmentation/segmentation`
