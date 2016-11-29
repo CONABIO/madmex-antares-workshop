@@ -22,6 +22,11 @@ This includes the client docker and docker-machine.
 
 * The host needs to have permissions to create, modify, read and write.
 
+
+You can identify the commands executed inside a container and executed by the host seeing the beginning of a command:
+
+If the command begins with `#`, then is a command executed inside a container. If it begins with `$`, then is a command executed by the host
+
 * Create a directory `/Users/workshop_user/workshop`
 
 ```
