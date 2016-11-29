@@ -198,7 +198,7 @@ We can use the command `gdal_merge.py` to visualize the first image, stacking th
 #gdal_merge.py LC80130452013145LGN00_B2.TIF LC80130452013145LGN00_B3.TIF LC80130452013145LGN00_B4.TIF -separate -o 2013145_merged.tif
 ```
 
-![cuba_imagen_original_2013_05_25.png](../result_images/cuba_imagen_original_2013_05_25.png)
+![cuba_imagen_original_2013_05_25.png](result_images/cuba_imagen_original_2013_05_25.png)
 
 
 
