@@ -24,6 +24,10 @@ This approach uses images that have similar regional and temporal characteristic
 
 * We need the root's password. 
 
+You can identify the commands executed inside a container and executed by the host seeing the beginning of a command:
+
+If the command begins with `#`, then is a command executed inside a container. If it begins with `$`, then is a command executed by the host
+
 Pull the next image from docker hub:
 
 ```
