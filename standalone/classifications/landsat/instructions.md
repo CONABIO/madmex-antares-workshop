@@ -8,6 +8,11 @@
 
 * We need to have an installation of docker in the system : https://www.docker.com/
 
+* An installation of git
+
+* The user that is going to execute the following commands needs to have permissions to create, modify, read and write.
+
+* We need the root's password. 
 
 Pull the images from docker hub:
 
