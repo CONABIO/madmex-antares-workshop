@@ -163,7 +163,7 @@ Dbvisualizer: https://www.dbvis.com/download/
 Create directory `/workshop/training_data`:
 
 ```
-$mkdir -p /workshop/training_data
+#mkdir -p /workshop/training_data
 ```
 
 Copy training data to `/workshop/training_data`
@@ -175,32 +175,32 @@ $cp training_data.tif /workshop/training_data
 Create directory `/workshop/segmentation`
 
 ```
-$mkdir -p /workshop/segmentation
+#mkdir -p /workshop/segmentation
 ```
 
 Change directory `/workshop/segmentation`
 
 ```
-$cd /workshop/segmentation
+#cd /workshop/segmentation
 ```
 
 Clone https://github.com/CONABIO/docker-segmentation.git
 
 ```
-$git clone https://github.com/CONABIO/docker-segmentation.git .
+#git clone https://github.com/CONABIO/docker-segmentation.git .
 ```
 
 Change directory `/workshop/segmentation/segmentation`
 
 ```
-$cd /workshop/segmentation/segmentation
+#cd /workshop/segmentation/segmentation
 ```
 
 
 Create directory `/workshop/segmentation/segmentation/license`
 
 ```
-$mkdir -p /workshop/segmentation/segmentation/license
+#mkdir -p /workshop/segmentation/segmentation/license
 ```
 
 Create archive `license.txt` in `/workshop/segmentation/segmentation/license`
@@ -208,18 +208,18 @@ Create archive `license.txt` in `/workshop/segmentation/segmentation/license`
 For this workshop we can use the license: `67156997172`
 
 ```
-echo 67156997172 > /workshop/segmentation/segmentation/license/license.txt
+#echo 67156997172 > /workshop/segmentation/segmentation/license/license.txt
 ```
 
 
 Register host and command in tables of database giving the ip of the machine and the user root with it's password:
 
 ```
-madmex remotecall --register host 172.16.9.145 madmex_run_container root root_password 22 workshop
+#madmex remotecall --register host 172.16.9.145 madmex_run_container root root_password 22 workshop
 ```
 
 ```
-madmex remotecall --register command workshop run_container workshop.q 
+#madmex remotecall --register command workshop run_container workshop.q 
 ```
 
 For rapideye classification
@@ -233,7 +233,7 @@ For rapideye classification
 Copy archives of ESRI shapefile to: `/workshop/landmask/countries_caribe`
 
 ```
-#cp countries_caribe.*  /workshop/landmask/countries_caribe
+$cp countries_caribe.*  /workshop/landmask/countries_caribe
 ```
 
 Create directories `/workshop/eodata/rapideye_images` and `/workshop/classification/rapideye_simple_lcc`
@@ -246,7 +246,7 @@ Create directories `/workshop/eodata/rapideye_images` and `/workshop/classificat
 Copy rapideye images to directory:  `/workshop/eodata/rapideye_images`
 
 ```
-#cp image.tif /workshop/eodata/rapideye_images
+$cp image.tif /workshop/eodata/rapideye_images
 ```
 
 
@@ -292,7 +292,7 @@ Reference: http://glc30.tianditu.com/
 Run classification rapideye command:
 
 ```
-madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --outlier True
+#madmex rapideyesimpleclassification --image /workshop/eodata/rapideye_images/1947604_2015-01-05_RE1_3A_298768.tif --outlier True
 ```
 
 ![rep_dominicana.png](result_images/rep_dominicana.png)
