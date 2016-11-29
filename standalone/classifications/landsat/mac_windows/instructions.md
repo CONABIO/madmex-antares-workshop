@@ -8,6 +8,11 @@ This includes the client docker and docker-machine.
 
 * An installation of virtualbox in the system: https://www.virtualbox.org/
 
+* An installation of git
+
+* The host needs to have permissions to create, modify, read and write.
+
+
 * Create a directory `/Users/workshop_user/workshop`
 
 ```
