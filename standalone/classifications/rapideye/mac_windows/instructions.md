@@ -6,6 +6,7 @@ We have two approaches for classification of rapideye images:
 
 Which we are going to test.
 
+
 * Regional and temporal
 
 This approach uses images that have similar regional and temporal characteristics. We use an ESRI shapefile `mapgrid` to define several regions that consists of rapideye tiles sharing common regional properties. As each rapideye image in a different time has different reflectances for each phase of vegetation, we use a seasonality window defined by a date and a buffer of days. This buffer also depends on the amount of images that we have for the given date.
