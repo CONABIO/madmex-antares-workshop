@@ -56,9 +56,7 @@ $cd /workshop
 Using the command line of your system, run the next line:
 
 ```
-$sudo docker run --hostname database --name postgres-server-madmex \
--v /workshop:/entry_for_database -p 32852:22 \
--p 32851:5432 -dt madmex/postgres-server
+$sudo docker run --hostname database --name postgres-server-madmex -v /workshop:/entry_for_database -p 32852:22 -p 32851:5432 -dt madmex/postgres-server
 ```
 
 Get the ip of the docker container that is running:
@@ -72,9 +70,7 @@ Assume that is ip is 172.17.0.2
 Create user `madmex_user` with password `madmex_user.` using the next line:
 
 ```
-$sudo docker exec -u=postgres -it postgres-server-madmex \
-psql -h 172.17.0.2 -p 5432 \
--c "CREATE USER madmex_user WITH PASSWORD 'madmex_user.'"
+$sudo docker exec -u=postgres -it postgres-server-madmex psql -h 172.17.0.2 -p 5432 -c "CREATE USER madmex_user WITH PASSWORD 'madmex_user.'"
 ```
 
 Create database `madmex_database` with owner `madmex_user`
