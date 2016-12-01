@@ -120,8 +120,8 @@ rapideye_footprints_mexico_old = False
 folder_segmentation = /workshop/segmentation/segmentation:/segmentation/
 folder_segmentation_license = /workshop/segmentation/segmentation/license/license.txt:/segmentation/license.txt
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
-big_folder = /workshop/classification/rapideye_simple_lcc/
-big_folder_host = /workshop/classification/rapideye_simple_lcc/:/results
+big_folder = /workshop/classification/landsat8/
+big_folder_host = /workshop/classification/landsat8/:/results
 landmask_path =/workshop/landmask/countries_caribe/
 ```
 
@@ -457,6 +457,8 @@ Change `configuration.ini` (if necessary) with lines:
 ```
 training_data = /workshop/training_data/globalland_caribe_geo_proj.vrt
 big_folder = /workshop/classification/landsat8/
+big_folder_host = /workshop/classification/landsat8/:/results
+
 ```
 
 Note: if you also have auxiliary files such as dem, aspect, slope, then create directory `/workshop/dem_files`
@@ -480,6 +482,11 @@ dem = /workshop/dem_files/dem.tif
 aspect_file = /workshop/dem_files/aspect.tif
 slope_file = /workshop/dem_files/slope.tif
 ```
+
+Check that every folder in the configuration file: `/workshop/code_madmex_antares/madmex/configuration/configuration.ini`
+
+exists, if not, then you probably miss a step for creating directories. So, go back and search for the command that you need to execute.
+
 
 If you changed `configuration.ini`, you need to install madmex again:
 
