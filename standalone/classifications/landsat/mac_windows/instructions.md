@@ -215,7 +215,23 @@ Download three images and copy to directory`/workshop/downloads_landsat`:
 #gsutil cp gs://earthengine-public/landsat/L8/013/045/LC80130452013177LGN01.tar.bz /workshop/downloads_landsat
 ```
 
-We can use the command `gdal_merge.py` to visualize the first image, stacking the bands 2, 3, 4
+We can use the command `gdal_merge.py` to visualize the first image, stacking the bands 2, 3, 4, but first you have to untar the downloaded data, for example:
+
+we can create a directory called `LC80130452013145LGN00`, and move `LC80130452013145LGN00.tar.bz` to this directory:
+
+```
+#mkdir LC80130452013145LGN00
+#mv LC80130452013145LGN00.tar.bz LC80130452013145LGN00
+```
+
+Then we can enter to the directory and untar de file:
+
+```
+#cd LC80130452013145LGN00
+#tar xvf LC80130452013145LGN00.tar.bz
+```
+
+After untar the `.tar.bz` we can merge the image using the next command
 
 ```
 #gdal_merge.py LC80130452013145LGN00_B2.TIF LC80130452013145LGN00_B3.TIF LC80130452013145LGN00_B4.TIF -separate -o 2013145_merged.tif
