@@ -207,7 +207,7 @@ Then we can enter to the directory and untar de file:
 ```
 #cd LC80130452013145LGN00
 #tar xvf LC80130452013145LGN00.tar.bz
-´´´
+```
 
 After decompressing the `.tar.bz` we can merge the image using the next command
 
