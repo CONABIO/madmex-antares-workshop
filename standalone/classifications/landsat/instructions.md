@@ -207,9 +207,9 @@ Then we can enter to the directory and untar de file:
 ```
 #cd LC80130452013145LGN00
 #tar xvf LC80130452013145LGN00.tar.bz
-```
+``
 
-After decompressing the `.tar.bz` we can merge the image using the next command
+After untar the `.tar.bz` we can merge the image using the next command
 
 ```
 #gdal_merge.py LC80130452013145LGN00_B2.TIF LC80130452013145LGN00_B3.TIF LC80130452013145LGN00_B4.TIF -separate -o 2013145_merged.tif
