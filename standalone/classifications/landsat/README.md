@@ -4,7 +4,7 @@ A brief explanation of the files you can find in this repository:
 
 * `instructions.md` contains the instructions for setting up the database and classification of landsat8 data in a stand alone version of MAD-MEX. This instructions are made for a gnu/linux system.
 
-For more information about landsat8, go to:
+	For more information about landsat8, go to:
 
 http://landsat.usgs.gov/landsat8.php
 
