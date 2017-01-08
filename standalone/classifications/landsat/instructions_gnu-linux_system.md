@@ -56,7 +56,7 @@ LoginGraceTime 120
 PermitRootLogin Yes
 StrictMode yes
 ```
-Type `ctrl + x`, when asked if save the file type `y` and then hit `enter` to write the file
+Type `ctrl + x`, when asked if save the file, then type `y` and then hit `enter` to write the file
 
 You need to restart the ssh service to update this changes:
 
