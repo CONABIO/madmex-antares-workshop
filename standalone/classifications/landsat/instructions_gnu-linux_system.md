@@ -6,7 +6,11 @@ On the next list you can find the minimum hardware requirements that your system
 
 * A `volume`, `disk`, or `hard disk` with at least 100 gb of free space
 
-We are going to assume an `ubuntu` gnu-linux system, please, do the appropiate changes of the name of the next list of packages if you are using a distribution different of `ubuntu`:
+#System
+
+We are going to assume an `ubuntu` gnu-linux system, please, do the appropiate changes of the name of the list of packages or commands if you are using a distribution different of `ubuntu`:
+
+## Packages
 
 * openssh-server
 * nano
@@ -52,7 +56,13 @@ LoginGraceTime 120
 PermitRootLogin Yes
 StrictMode yes
 ```
-Type `ctrl + x`, when asked if save the file type yes
+Type `ctrl + x`, when asked if save the file type `y` and then hit `enter` to write the file
+
+You need to restart the ssh service to update this changes:
+
+```
+$sudo service ssh restart
+```
 
 
 
