@@ -6,7 +6,7 @@
 
 * We need to have an installation of docker in the system : https://www.docker.com/
 
-* The next commands assume that the user has sudo privileges or the user that is going to execute the following commands needs permissions to create, modify, read and write.
+* The next commands assume that the user has sudo privileges or the user that is going to execute the following commands needs permissions to create, modify, read, write and install packages.
 
 * An installation of git:
 
