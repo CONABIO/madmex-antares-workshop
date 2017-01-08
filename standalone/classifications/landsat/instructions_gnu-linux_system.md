@@ -46,7 +46,7 @@ Using a text editor, for example nano, execute:
 $sudo nano /etc/ssh/sshd_config
 ```
 
-Using the up, down, left, right arrows on your keyboard you can traverse the screen that appears after executing the above command.
+Using the up, down, left, right arrows on your keyboard so you can traverse the screen that appears after executing the above command.
 
 Find the line under `#Authentication` that says `PermitRootLogin` and change to `Yes`:
 
@@ -63,13 +63,5 @@ You need to restart the ssh service to update this changes:
 ```
 $sudo service ssh restart
 ```
-
-
-
-
-
-
-
-
 
 
