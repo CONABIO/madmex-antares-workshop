@@ -1,5 +1,7 @@
 #Landsat Classification
 
+We are going to assume an `ubuntu gnu-linux system`, please, do the appropiate changes of the name of the list of packages or commands if you are using a distribution different of `ubuntu`
+
 #Requirements:
 
 * The ip of the machine in which we are going to perform the classification command is `172.16.9.145`.
