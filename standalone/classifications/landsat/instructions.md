@@ -2,17 +2,17 @@
 
 #Requirements:
 
-* The next commands assume that the user has sudo privileges
-
-* The ip of the machine in which we are going to perform the classification command is `172.16.9.145`, and the password of user root
+* The ip of the machine in which we are going to perform the classification command is `172.16.9.145`.
 
 * We need to have an installation of docker in the system : https://www.docker.com/
 
-* An installation of git
+* An installation of git.
 
-* The user that is going to execute the following commands needs to have permissions to create, modify, read and write.
+* The next commands assume that the user has sudo privileges or the user that is going to execute the following commands needs permissions to create, modify, read and write.
 
-* We need the root's password.
+* We need the root's password. You can stablish it with the file `instructions_gnu/linux_system.md`. Go to the `READme.md of` this repository under the levels: 
+
+`madmex-antares-workshop/standalone/classifications/landsat/instructions_gnu/linux_system.md`
 
 You can identify the commands executed inside a container and executed by the host, seeing the beginning of a command which will be highlighted with gray color ` `:
 
