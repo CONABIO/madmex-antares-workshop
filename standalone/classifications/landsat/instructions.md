@@ -6,9 +6,13 @@
 
 * We need to have an installation of docker in the system : https://www.docker.com/
 
-* An installation of git.
-
 * The next commands assume that the user has sudo privileges or the user that is going to execute the following commands needs permissions to create, modify, read and write.
+
+* An installation of git:
+
+```
+$sudo apt-get install git
+```
 
 * We need the root's password. You can stablish it with the file `instructions_gnu/linux_system.md`. Go to the `READme.md of` this repository under the levels: 
 
