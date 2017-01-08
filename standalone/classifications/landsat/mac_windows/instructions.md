@@ -275,12 +275,12 @@ docker@workshop:~$ exit
 
 * create the file `/workshop/ledaps_landsat8_shell.sh` and copy-paste the shell [ledaps_landsat8_shell.sh](ledaps_landsat8_shell.sh) on it.
 
-* Create directory: `/workshop/auxiliary_data_landsat8/`, change directory to `/workshop/auxiliary_data_landsat8` and curl the auxiliary data according to: https://github.com/USGS-EROS/espa-surface-reflectance/tree/master/not-validated-prototype-lasrc
+* Create directory: `/workshop/auxiliary_data_landsat8/`, change directory to `/workshop/auxiliary_data_landsat8` and wget the auxiliary data according to: https://github.com/USGS-EROS/espa-surface-reflectance/tree/master/not-validated-prototype-lasrc
 
 ```
 #mkdir -p /workshop/auxiliary_data_landsat8
 #cd /workshop/auxiliary_data_landsat8
-#curl -O http://edclpdsftp.cr.usgs.gov/downloads/auxiliaries/l8sr_auxiliary/l8sr_auxiliary.tar.gz
+#wget http://edclpdsftp.cr.usgs.gov/downloads/auxiliaries/l8sr_auxiliary/l8sr_auxiliary.tar.gz
 ```
 
 * Decompress the auxiliary data:
