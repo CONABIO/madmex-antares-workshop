@@ -1,6 +1,6 @@
 A brief explanation of the files you can find in this repository:
 
-* `instructions_gnu-linux_system.md` contains requirements, packages, dependencies of the system in which MADMEX is going to be installed. It assumes an `ubuntu` gnu-linux system.
+* `instructions_gnu-linux_system.md` contains hardware requirements, packages, dependencies of the system in which MADMEX is going to be installed. It assumes an `ubuntu` gnu-linux system.
 
 * `instructions.md` contains the instructions for setting up the database and classification of landsat8 data in a stand alone version of MAD-MEX. This instructions are made for a gnu/linux system.
 
