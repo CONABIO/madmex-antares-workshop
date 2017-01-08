@@ -1,6 +1,6 @@
 #Landsat Classification
 
-We are going to assume an `ubuntu gnu-linux system`, please, do the appropiate changes of the name of the list of packages or commands if you are using a distribution different of `ubuntu`
+We are going to assume an `ubuntu gnu-linux system`, please, do the appropiate changes if you are using a distribution different of `ubuntu`
 
 #Requirements:
 
