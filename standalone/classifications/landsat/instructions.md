@@ -18,7 +18,10 @@ $sudo apt-get install git
 
 `madmex-antares-workshop/standalone/classifications/landsat/instructions_gnu/linux_system.md`
 
-You can identify the commands executed inside a container and executed by the host, seeing the beginning of a command which will be highlighted with gray color ` `:
+for the minimum requirements that your system needs.
+
+
+On the next commands, you can identify the commands executed inside a container and executed by the host, seeing the beginning of a command, which are highlighted with gray color ` `:
 
 If the command begins with `#`, then is a command executed inside a container. If it begins with `$`, then is a command executed by the host 
 
