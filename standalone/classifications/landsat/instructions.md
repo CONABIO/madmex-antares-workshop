@@ -14,7 +14,7 @@
 $sudo apt-get install git
 ```
 
-* We need the root's password. You can stablish it with the file `instructions_gnu/linux_system.md`. Go to the `READme.md of` this repository under the levels: 
+* We need the root's password. You can stablish it with the file `instructions_gnu/linux_system.md`. Go to the `README.md of` this repository under the levels: 
 
 `madmex-antares-workshop/standalone/classifications/landsat/instructions_gnu/linux_system.md`
 
