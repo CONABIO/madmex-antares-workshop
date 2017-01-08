@@ -2,7 +2,7 @@
 
 On the next list you can find the minimum hardware requirements that your system needs for using MADMEX on a standalone version. 
 
-* `RAM` of at least 6gb
+* `RAM` of at least 6 gb
 
 * A `volume`, `disk`, or `hard disk` with at least 100 gb of free space
 
