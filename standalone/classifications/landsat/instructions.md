@@ -18,7 +18,7 @@ $sudo apt-get install git
 
 `madmex-antares-workshop/standalone/classifications/landsat/instructions_gnu-linux_system.md`
 
-for the minimum requirements that your system needs.
+	for the minimum requirements that your system needs.
 
 
 On the next commands, you can identify the commands executed inside a container and executed by the host, seeing the beginning of a command, which are highlighted with gray color ` `:
