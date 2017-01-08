@@ -6,9 +6,16 @@ On the next list you can find the minimum hardware requirements that your system
 
 * A `volume`, `disk`, or `hard disk` with at least 100 gb of free space
 
-We are going to assume an `ubuntu` gnu-linux system, please, do the appropiate changes of the name of the next packages if you are using a distribution different of `ubuntu` 
+We are going to assume an `ubuntu` gnu-linux system, please, do the appropiate changes of the name of the next list of packages if you are using a distribution different of `ubuntu`:
 
 * openssh-server
+* nano
+
+To install a package, for example `openssh-server` execute:
+
+```
+$sudo apt-get install openssh-server
+```
 
 Once you have installed the above packages, here are some settings that you need to have:
 
@@ -20,14 +27,14 @@ $sudo service ssh restart
 
 ## For the user root:
 
-* Give a password to the user root, for example, setting the password of root to `root_password`:
+* Give a password to the user root:
 
 ```
 $sudo passwd
 ```
-After executing this command, you need to type `root_password`
+After executing this command, you need to type the password
 
-* Authentication to root change to yes on file /etc/ssh/sshd_config:
+* Authentication to root:
 
 Using a text editor, for example nano, execute:
 
@@ -35,7 +42,7 @@ Using a text editor, for example nano, execute:
 $sudo nano /etc/ssh/sshd_config
 ```
 
-Using "&#8592", "&#8593", "&#8594", "&#8595" on your keyboarrd you can traverse the file.
+Using &#8592, &#8593, &#8594, &#8595 on your keyboard you can traverse the screen that appears after executing the above command.
 
 Find the line under `#Authentication` that says `PermitRootLogin` and change to `Yes`:
 
@@ -45,7 +52,7 @@ LoginGraceTime 120
 PermitRootLogin Yes
 StrictMode yes
 ```
-
+Type `ctrl + x`, when asked if save the file type yes
 
 
 
