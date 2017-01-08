@@ -46,7 +46,7 @@ Using a text editor, for example nano, execute:
 $sudo nano /etc/ssh/sshd_config
 ```
 
-Using `\&\#8592`, `&larr`, `\lambda`, <&#8594>, &#8595 on your keyboard you can traverse the screen that appears after executing the above command.
+Using the up, down, left, right arrows on your keyboard you can traverse the screen that appears after executing the above command.
 
 Find the line under `#Authentication` that says `PermitRootLogin` and change to `Yes`:
 
