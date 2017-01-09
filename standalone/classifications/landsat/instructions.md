@@ -96,6 +96,8 @@ Clone madmex code into directory: `/workshop/code`
 $sudo git clone https://github.com/CONABIO/madmex-antares.git code_madmex_antares
 ```
 
+Execute the following command to start a container named: `madmex_antares_container`
+
 
 ```
 $sudo docker run -p 2225:22 -v /workshop:/workshop --hostname=madmex-antares --name madmex_antares_container -dit madmex/antares /bin/bash
