@@ -30,6 +30,8 @@ If the command begins with `#`, then is a command executed inside a container. I
 
 * Create a directory `/Users/workshop_user/workshop`
 
+Using the command line of your system, run the next line:
+
 ```
 $mkdir -p /Users/workshop_user/workshop
 ```
@@ -51,6 +53,7 @@ $docker-machine create -d virtualbox workshop
 ```
 $docker-machine stop workshop
 ```
+
 And go to virtualbox to adjust ram.
 
 
