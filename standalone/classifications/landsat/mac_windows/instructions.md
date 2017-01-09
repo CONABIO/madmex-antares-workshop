@@ -132,7 +132,7 @@ landmask_path /workshop/landmask/countries_caribe/
 
 We exit nano with `ctrl+x` and then type `y`in your keyboard to save changes.
 
-Execute the following command:
+Execute the following command to start a container named: `madmex_antares_container`
 
 ```
 $docker $(docker-machine config workshop) run -p 2225:22 -v /Users/workshop_user/workshop/configuration/configuration.ini:/workshop/code_madmex_antares/madmex/configuration/configuration.ini -v /Users/workshop_user/workshop:/workshop --hostname=madmex-antares --name madmex_antares_container -dit madmex/antares /bin/bash
