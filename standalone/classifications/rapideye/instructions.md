@@ -17,7 +17,7 @@ We are going to assume an `ubuntu gnu-linux system`, please, do the appropiate c
 
 #Requirements
 
-* The ip of the machine in which we are going to perform the classification command is 172.16.9.145, and the password of user root
+* The ip of the machine in which we are going to perform the classification command is `172.16.9.145`, and the password of user root
 
 * We need to have an installation of docker in the system : https://www.docker.com/
 
