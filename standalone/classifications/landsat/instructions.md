@@ -12,11 +12,13 @@ We are going to assume an `ubuntu gnu-linux system`, please, do the appropiate c
 
 * An installation of git:
 
+Using the command line of your system, run the next line:
+
 ```
 $sudo apt-get install git
 ```
 
-* We need the root's password. You can stablish it with the file `instructions_gnu-linux_system.md`. Go to the `README.md of` this repository under the levels: 
+* We need the root's password. You can stablish it with the file `instructions_gnu-linux_system.md`. Go to the `README.md` of this repository under the levels: 
 
 `madmex-antares-workshop/standalone/classifications/landsat/instructions_gnu-linux_system.md`
 
@@ -28,6 +30,8 @@ On the next commands, you can identify the commands executed inside a container 
 If the command begins with `#`, then is a command executed inside a container. If it begins with `$`, then is a command executed by the host 
 
 Pull the images from docker hub:
+
+Using the command line of your system, run the next line:
 
 ```
 $sudo docker pull madmex/postgres-server
