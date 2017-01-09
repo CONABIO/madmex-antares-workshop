@@ -11,25 +11,40 @@ Which we are going to test.
 
 This approach uses images that have similar regional and temporal characteristics. We use an ESRI shapefile `mapgrid` to define several regions that consists of rapideye tiles sharing common regional properties. As each rapideye image in a different time has different reflectances for each phase of vegetation, we use a seasonality window defined by a date and a buffer of days. This buffer also depends on the amount of images that we have for the given date.
 
-#Requirements
 
-* The next commands assume that the user has sudo privileges
+We are going to assume an `ubuntu gnu-linux system`, please, do the appropiate changes if you are using a distribution different of `ubuntu`
+
+
+#Requirements
 
 * The ip of the machine in which we are going to perform the classification command is 172.16.9.145, and the password of user root
 
 * We need to have an installation of docker in the system : https://www.docker.com/
 
-* An installation of git
+* The next commands assume that the user has sudo privileges or the user that is going to execute the following commands needs permissions to create, modify, read, write and install packages.
 
-* The user that is going to execute the following commands needs to have permissions to create, modify, read and write.
+* An installation of git:
 
-* We need the root's password. 
+Using the command line of your system, run the next line:
 
-You can identify the commands executed inside a container and executed by the host, seeing the beginning of a command that will be highlighted with gray color ` `:
+```
+$sudo apt-get install git
+```
 
-If the command begins with `#`, then is a command executed inside a container. If it begins with `$`, then is a command executed by the host
+* We need the root's password. You can stablish it with the file `instructions_gnu-linux_system.md`. Go to the `README.md` of this repository under the levels: 
+
+`madmex-antares-workshop/standalone/classifications/landsat/instructions_gnu-linux_system.md`
+
+for the minimum requirements that your system needs.
+
+On the next commands, you can identify the commands executed inside a container and executed by the host, seeing the beginning of a command, which are highlighted with gray color ` `:
+
+If the command begins with `#`, then is a command executed inside a container. If it begins with `$`, then is a command executed by the host 
 
 Pull the next image from docker hub:
+
+Using the command line of your system, run the next line:
+
 
 ```
 $sudo docker pull madmex/postgres-server
@@ -92,7 +107,7 @@ Clone madmex code into directory: `/workshop/code`
 $sudo git clone https://github.com/CONABIO/madmex-antares.git code_madmex_antares
 ```
 	
-Execute the following command:
+Execute the following command to start a container named: `madmex_antares_container`
 
 ```
 $sudo docker run -p 2225:22 -v /workshop:/workshop --hostname=madmex-antares --name madmex_antares_container -dit madmex/antares /bin/bash
