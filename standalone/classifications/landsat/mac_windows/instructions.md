@@ -69,18 +69,14 @@ $docker $(docker-machine config workshop) pull madmex/c5_execution
 Using the command line of your system, run the next line:
 
 ```
-$docker $(docker-machine config workshop) run --hostname database --name postgres-server-madmex \
--v /Users/workshop_user/workshop:/entry_for_database -p 32852:22 \
--p 32851:5432 -dt madmex/postgres-server
+$docker $(docker-machine config workshop) run --hostname database --name postgres-server-madmex -v /Users/workshop_user/workshop:/entry_for_database -p 32852:22 -p 32851:5432 -dt madmex/postgres-server
 ```
 
 
 Create user `madmex_user` with password `madmex_user.` using the next line:
 
 ```
-$docker $(docker-machine config workshop) exec -u=postgres -it postgres-server-madmex \
-psql -h $(docker-machine ip workshop) -p 32851 \
--c "CREATE USER madmex_user WITH PASSWORD 'madmex_user.'"
+$docker $(docker-machine config workshop) exec -u=postgres -it postgres-server-madmex psql -h $(docker-machine ip workshop) -p 32851 -c "CREATE USER madmex_user WITH PASSWORD 'madmex_user.'"
 ```
 
 Create database `madmex_database` with owner `madmex_user`
