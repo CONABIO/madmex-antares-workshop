@@ -58,6 +58,12 @@ StrictMode yes
 ```
 Type `ctrl + x`, when asked if save the file, then type `y` and then hit `enter` to write the file
 
+Execute the next line:
+
+```
+$sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+```
+
 You need to restart the ssh service to update this changes:
 
 ```
