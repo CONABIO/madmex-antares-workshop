@@ -1,8 +1,8 @@
-#Landsat Classification
+# Landsat Classification
 
 We are going to assume an `ubuntu gnu-linux system`, please, do the appropiate changes if you are using a distribution different of `ubuntu`
 
-#Requirements:
+# Requirements:
 
 * The ip of the machine in which we are going to perform the classification command is `172.16.9.145`.
 
@@ -54,7 +54,7 @@ Change directory to directory `workshop`
 $cd /workshop
 ```
 
-#Setting up the database
+# Setting up the database
 
 
 Using the command line of your system, run the next line:
@@ -169,7 +169,7 @@ With dbvisualizer, for example, we can have a picture of the database:
 Dbvisualizer: https://www.dbvis.com/download/
 
 
-#Downloading landsat8 images
+# Downloading landsat8 images
 
 
 Create directory `/workshop/downloads_landsat`:
@@ -234,9 +234,9 @@ After untar the `.tar.bz` we can merge the image using the next command
 
 
 
-#Preprocessing and ingestion
+# Preprocessing and ingestion
 
-##LEDAPS
+## LEDAPS
 
 For converting to surface reflectances and getting top of atmoshpere products for landsat8 we use: 
 
@@ -306,7 +306,7 @@ We can use the command `gdal_merge.py` to visualize the first image processed wi
 ![cuba_sr_2013_05_25.png](result_images/cuba_sr_2013_05_25.png)
 
 
-##FMASK
+## FMASK
 
 For clouds, we use Fmask algorithm: 
 
@@ -356,7 +356,7 @@ After ingestion of raw data or products, we have registered both in database and
 
 <img src="result_images/cuba_fmask_2013_05_25_legend.png" width="20%">
 
-##Ingest raw folder:
+## Ingest raw folder:
 
 If we only want to register raw data of landsat execute the following
 
@@ -399,7 +399,7 @@ After ingestion the raw data, we can delete the folder:
 
 After ingestion of raw data we have registered both in database and in folder `/workshop/eodata` the archives
 
-##Classification
+## Classification
 
 
 Crete directory `/workshop/training_data`:
