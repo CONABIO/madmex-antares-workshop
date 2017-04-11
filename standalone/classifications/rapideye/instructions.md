@@ -1,4 +1,4 @@
-#Rapideye classification
+# Rapideye classification
 
 We have two approaches for classification of rapideye images:
 
@@ -15,7 +15,7 @@ This approach uses images that have similar regional and temporal characteristic
 We are going to assume an `ubuntu gnu-linux system`, please, do the appropiate changes if you are using a distribution different of `ubuntu`
 
 
-#Requirements
+# Requirements
 
 * The ip of the machine in which we are going to perform the classification command is `172.16.9.145`.
 
@@ -65,7 +65,7 @@ Change directory to directory `workshop`
 $cd /workshop
 ```
 
-#Setting up the database
+# Setting up the database
 
 
 Using the command line of your system, run the next line:
@@ -176,7 +176,7 @@ With dbvisualizer, for example, we can have a picture of the database:
 
 Dbvisualizer: https://www.dbvis.com/download/
 
-##Classification
+## Classification
 
 Create directory `/workshop/training_data`:
 
